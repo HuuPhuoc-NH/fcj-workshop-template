@@ -1,57 +1,61 @@
 ---
 title: "Week 11 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-11-23
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
+{{% notice warning %}}
+⚠️ **Note:** This page records the hands-on work for the week. AWS links point to official documentation.
 {{% /notice %}}
 
+### Week 11 Topic: Amazon Lightsail
 
-### Week 11 Objectives:
+Create a Lightsail database and instance, configure Ubuntu and a static IP, and deploy applications.
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Objectives
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+- Understand the purpose and core concepts of **Amazon Lightsail**.
+- Practice the main steps in the AWS Management Console.
+- Record configuration, verification results, and lessons learned.
 
+### Tasks completed
 
-### Week 11 Achievements:
+| Day | Task | Result | Reference |
+| --- | --- | --- | --- |
+| Day 1 | Read the AWS documentation and identify prerequisites and required resources. | Understood the workflow and inputs. | <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html> |
+| Day 2 | Practice creating/configuring resources for the weekly topic. | Completed the main AWS steps. | <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html> |
+| Day 3 | Verify status, permissions, connectivity, or deployment results. | Confirmed that the resource worked as expected. | <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html> |
+| Day 4 | Record configuration details and troubleshoot issues. | Documented the actions and fixes. | <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html> |
+| Day 5 | Summarize the results and lessons learned. | Completed Week 11 worklog. | <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html> |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Achievements
 
-* Successfully created and configured an AWS Free Tier account.
+- Understood the role of **Amazon Lightsail** in AWS.
+- Completed the main hands-on steps from the guide.
+- Learned how to verify results and record reusable configuration details.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+### Image Evidence
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+Evidence of creating the Lightsail database/instance, configuring Ubuntu and a static IP, and deploying application instances.
 
-* Used AWS CLI to perform basic operations such as:
+![Evidence screenshot 1 - Amazon Lightsail](/images/worklog/lightsail_01.png)
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+![Evidence screenshot 2 - Amazon Lightsail](/images/worklog/lightsail_02.png)
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+![Evidence screenshot 3 - Amazon Lightsail](/images/worklog/lightsail_03.png)
+
+![Evidence screenshot 4 - Amazon Lightsail](/images/worklog/lightsail_04.png)
+
+![Evidence screenshot 5 - Amazon Lightsail](/images/worklog/lightsail_05.png)
+
+![Evidence screenshot 6 - Amazon Lightsail](/images/worklog/lightsail_06.png)
+
+![Evidence screenshot 7 - Amazon Lightsail](/images/worklog/lightsail_07.png)
+
+### References
+
+- AWS guide: <https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html>
+- Sample worklog: <https://thanhzicne.github.io/aws-learning-journey/vi/1-worklog/>
+- GitHub: <https://github.com/HuuPhuoc-NH/fcj-workshop-template>
+
