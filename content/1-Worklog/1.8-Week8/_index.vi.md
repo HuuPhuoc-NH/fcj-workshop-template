@@ -5,10 +5,6 @@ weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Nội dung được viết lại theo quá trình thực hành; link tham khảo dẫn tới tài liệu chính thức của AWS.
-{{% /notice %}}
-
 ### Chủ đề tuần 8: AWS Cloud9
 
 Tạo môi trường Cloud9, cấu hình môi trường phát triển và chạy thử mã nguồn.
@@ -21,13 +17,13 @@ Tạo môi trường Cloud9, cấu hình môi trường phát triển và chạy
 
 ### Các công việc thực hiện
 
-| Ngày | Công việc | Kết quả | Nguồn tài liệu |
-| --- | --- | --- | --- |
-| Ngày 1 | Đọc tài liệu AWS và xác định tài nguyên cần chuẩn bị. | Nắm được quy trình và yêu cầu đầu vào. | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
-| Ngày 2 | Thực hành tạo/cấu hình tài nguyên theo chủ đề tuần. | Hoàn thành các bước chính trên AWS. | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
-| Ngày 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Xác nhận tài nguyên hoạt động đúng. | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
-| Ngày 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Có nhật ký thao tác và cách khắc phục. | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
-| Ngày 5 | Tổng hợp kết quả và rút kinh nghiệm. | Hoàn thành worklog tuần 8. | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 1 | Đọc tài liệu AWS và xác định kiến thức, tài nguyên cần chuẩn bị. | Week 8 - Day 1 | Week 8 - Day 1 | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
+| 2 | Thực hành tạo hoặc cấu hình tài nguyên theo chủ đề tuần. | Week 8 - Day 2 | Week 8 - Day 2 | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
+| 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Week 8 - Day 3 | Week 8 - Day 3 | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
+| 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Week 8 - Day 4 | Week 8 - Day 4 | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
+| 5 | Tổng hợp kết quả và rút kinh nghiệm. | Week 8 - Day 5 | Week 8 - Day 5 | <https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html> |
 
 ### Kết quả đạt được
 

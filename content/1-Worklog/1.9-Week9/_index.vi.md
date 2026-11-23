@@ -5,10 +5,6 @@ weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Nội dung được viết lại theo quá trình thực hành; link tham khảo dẫn tới tài liệu chính thức của AWS.
-{{% /notice %}}
-
 ### Chủ đề tuần 9: Amazon S3
 
 Tạo bucket, quản lý object, cấu hình quyền truy cập và static website hosting.
@@ -21,13 +17,13 @@ Tạo bucket, quản lý object, cấu hình quyền truy cập và static websi
 
 ### Các công việc thực hiện
 
-| Ngày | Công việc | Kết quả | Nguồn tài liệu |
-| --- | --- | --- | --- |
-| Ngày 1 | Đọc tài liệu AWS và xác định tài nguyên cần chuẩn bị. | Nắm được quy trình và yêu cầu đầu vào. | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
-| Ngày 2 | Thực hành tạo/cấu hình tài nguyên theo chủ đề tuần. | Hoàn thành các bước chính trên AWS. | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
-| Ngày 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Xác nhận tài nguyên hoạt động đúng. | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
-| Ngày 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Có nhật ký thao tác và cách khắc phục. | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
-| Ngày 5 | Tổng hợp kết quả và rút kinh nghiệm. | Hoàn thành worklog tuần 9. | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 1 | Đọc tài liệu AWS và xác định kiến thức, tài nguyên cần chuẩn bị. | Week 9 - Day 1 | Week 9 - Day 1 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
+| 2 | Thực hành tạo hoặc cấu hình tài nguyên theo chủ đề tuần. | Week 9 - Day 2 | Week 9 - Day 2 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
+| 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Week 9 - Day 3 | Week 9 - Day 3 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
+| 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Week 9 - Day 4 | Week 9 - Day 4 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
+| 5 | Tổng hợp kết quả và rút kinh nghiệm. | Week 9 - Day 5 | Week 9 - Day 5 | <https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html> |
 
 ### Kết quả đạt được
 

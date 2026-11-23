@@ -5,10 +5,6 @@ weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Nội dung được viết lại theo quá trình thực hành; link tham khảo dẫn tới tài liệu chính thức của AWS.
-{{% /notice %}}
-
 ### Chủ đề tuần 3: AWS Support
 
 Tìm hiểu Support Center, các gói hỗ trợ và cách tạo yêu cầu hỗ trợ.
@@ -21,13 +17,13 @@ Tìm hiểu Support Center, các gói hỗ trợ và cách tạo yêu cầu hỗ
 
 ### Các công việc thực hiện
 
-| Ngày | Công việc | Kết quả | Nguồn tài liệu |
-| --- | --- | --- | --- |
-| Ngày 1 | Đọc tài liệu AWS và xác định tài nguyên cần chuẩn bị. | Nắm được quy trình và yêu cầu đầu vào. | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| Ngày 2 | Thực hành tạo/cấu hình tài nguyên theo chủ đề tuần. | Hoàn thành các bước chính trên AWS. | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| Ngày 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Xác nhận tài nguyên hoạt động đúng. | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| Ngày 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Có nhật ký thao tác và cách khắc phục. | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| Ngày 5 | Tổng hợp kết quả và rút kinh nghiệm. | Hoàn thành worklog tuần 3. | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 1 | Đọc tài liệu AWS và xác định kiến thức, tài nguyên cần chuẩn bị. | Week 3 - Day 1 | Week 3 - Day 1 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 2 | Thực hành tạo hoặc cấu hình tài nguyên theo chủ đề tuần. | Week 3 - Day 2 | Week 3 - Day 2 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 3 | Kiểm tra trạng thái, quyền truy cập, kết nối hoặc kết quả triển khai. | Week 3 - Day 3 | Week 3 - Day 3 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 4 | Ghi chép thông số cấu hình và xử lý lỗi phát sinh. | Week 3 - Day 4 | Week 3 - Day 4 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 5 | Tổng hợp kết quả và rút kinh nghiệm. | Week 3 - Day 5 | Week 3 - Day 5 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
 
 ### Kết quả đạt được
 

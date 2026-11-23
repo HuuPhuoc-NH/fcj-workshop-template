@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** This is a 12-week AWS hands-on worklog, with one AWS topic assigned to each week.
-{{% /notice %}}
-
 The worklog is divided into 12 weeks. Each page includes objectives, tasks, outcomes, and references; evidence screenshots are placed in the corresponding hands-on weeks.
 
 **Week 1:** [AWS Account](1.1-week1/)

@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Đây là worklog thực hành AWS gồm 12 tuần, với mỗi tuần tương ứng một chủ đề trong lộ trình học.
-{{% /notice %}}
-
 Worklog được chia thành 12 tuần. Mỗi trang trình bày mục tiêu, công việc, kết quả và link tài liệu; các ảnh minh chứng được đặt tại đúng tuần có thực hành tương ứng.
 
 **Tuần 1:** [AWS Account](1.1-week1/)

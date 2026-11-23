@@ -5,10 +5,6 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** This page records the hands-on work for the week. AWS links point to official documentation.
-{{% /notice %}}
-
 ### Week 1 Topic: AWS Account
 
 Create and activate an AWS account; become familiar with the AWS Management Console and AWS Regions.
@@ -19,15 +15,15 @@ Create and activate an AWS account; become familiar with the AWS Management Cons
 - Practice the main steps in the AWS Management Console.
 - Record configuration, verification results, and lessons learned.
 
-### Tasks completed
+### Tasks to be carried out this week
 
-| Day | Task | Result | Reference |
-| --- | --- | --- | --- |
-| Day 1 | Read the AWS documentation and identify prerequisites and required resources. | Understood the workflow and inputs. | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
-| Day 2 | Practice creating/configuring resources for the weekly topic. | Completed the main AWS steps. | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
-| Day 3 | Verify status, permissions, connectivity, or deployment results. | Confirmed that the resource worked as expected. | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
-| Day 4 | Record configuration details and troubleshoot issues. | Documented the actions and fixes. | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
-| Day 5 | Summarize the results and lessons learned. | Completed Week 1 worklog. | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 1 | Read the AWS documentation and identify the knowledge and resources required. | Week 1 - Day 1 | Week 1 - Day 1 | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
+| 2 | Practice creating or configuring resources for the weekly topic. | Week 1 - Day 2 | Week 1 - Day 2 | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
+| 3 | Verify status, permissions, connectivity, or deployment results. | Week 1 - Day 3 | Week 1 - Day 3 | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
+| 4 | Record configuration details and troubleshoot issues. | Week 1 - Day 4 | Week 1 - Day 4 | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
+| 5 | Summarize the results and lessons learned. | Week 1 - Day 5 | Week 1 - Day 5 | <https://docs.aws.amazon.com/hands-on/latest/setup-environment/module-one.html> |
 
 ### Achievements
 
