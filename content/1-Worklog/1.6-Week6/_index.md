@@ -9,30 +9,24 @@ pre: " <b> 1.6. </b> "
 
 Launch an EC2 instance, select an AMI and instance type, and connect to the server.
 
-### Objectives
+### Week 6 Objectives:
 
 - Understand the purpose and core concepts of **Amazon Elastic Compute Cloud (EC2)**.
 - Practice the main steps in the AWS Management Console.
 - Record configuration, verification results, and lessons learned.
 
-### Tasks to be carried out this week
+### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 1 | Read the AWS documentation and identify the knowledge and resources required. | Week 6 - Day 1 | Week 6 - Day 1 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
-| 2 | Practice creating or configuring resources for the weekly topic. | Week 6 - Day 2 | Week 6 - Day 2 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
-| 3 | Verify status, permissions, connectivity, or deployment results. | Week 6 - Day 3 | Week 6 - Day 3 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
-| 4 | Record configuration details and troubleshoot issues. | Week 6 - Day 4 | Week 6 - Day 4 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
-| 5 | Summarize the results and lessons learned. | Week 6 - Day 5 | Week 6 - Day 5 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
+| 2 | Read the AWS guide and prepare the knowledge required for Amazon Elastic Compute Cloud (EC2). | 19/10/2026 | 19/10/2026 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
+| 3 | Practice creating or configuring resources for Amazon Elastic Compute Cloud (EC2). | 20/10/2026 | 20/10/2026 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
+| 4 | Verify status, permissions, connectivity, or deployment results. | 21/10/2026 | 21/10/2026 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
+| 5 | Record configuration details and troubleshoot issues. | 22/10/2026 | 22/10/2026 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
+| 6 | Summarize the results and lessons learned. | 23/10/2026 | 23/10/2026 | <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html> |
 
-### Achievements
+### Week 6 Achievements:
 
 - Understood the role of **Amazon Elastic Compute Cloud (EC2)** in AWS.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
-### References
-
-- AWS guide: <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html>
-- Sample worklog: <https://thanhzicne.github.io/aws-learning-journey/vi/1-worklog/>
-- GitHub: <https://github.com/HuuPhuoc-NH/fcj-workshop-template>
-

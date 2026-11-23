@@ -9,30 +9,24 @@ pre: " <b> 1.3. </b> "
 
 Learn the Support Center, support plans, and how to create a support case.
 
-### Objectives
+### Week 3 Objectives:
 
 - Understand the purpose and core concepts of **AWS Support**.
 - Practice the main steps in the AWS Management Console.
 - Record configuration, verification results, and lessons learned.
 
-### Tasks to be carried out this week
+### Tasks to be carried out this week:
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 1 | Read the AWS documentation and identify the knowledge and resources required. | Week 3 - Day 1 | Week 3 - Day 1 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| 2 | Practice creating or configuring resources for the weekly topic. | Week 3 - Day 2 | Week 3 - Day 2 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| 3 | Verify status, permissions, connectivity, or deployment results. | Week 3 - Day 3 | Week 3 - Day 3 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| 4 | Record configuration details and troubleshoot issues. | Week 3 - Day 4 | Week 3 - Day 4 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
-| 5 | Summarize the results and lessons learned. | Week 3 - Day 5 | Week 3 - Day 5 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 2 | Read the AWS guide and prepare the knowledge required for AWS Support. | 28/09/2026 | 28/09/2026 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 3 | Practice creating or configuring resources for AWS Support. | 29/09/2026 | 29/09/2026 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 4 | Verify status, permissions, connectivity, or deployment results. | 30/09/2026 | 30/09/2026 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 5 | Record configuration details and troubleshoot issues. | 01/10/2026 | 01/10/2026 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
+| 6 | Summarize the results and lessons learned. | 02/10/2026 | 02/10/2026 | <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html> |
 
-### Achievements
+### Week 3 Achievements:
 
 - Understood the role of **AWS Support** in AWS.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
-### References
-
-- AWS guide: <https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html>
-- Sample worklog: <https://thanhzicne.github.io/aws-learning-journey/vi/1-worklog/>
-- GitHub: <https://github.com/HuuPhuoc-NH/fcj-workshop-template>
-
