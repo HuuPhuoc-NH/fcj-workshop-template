@@ -31,6 +31,19 @@ Create a Lightsail database and instance, configure Ubuntu and a static IP, and 
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the Amazon Lightsail workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 12
+
+- Continue learning and practicing **Amazon Lightsail Containers** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+
 ### Week 11 Image Evidence:
 
 Evidence of creating the Lightsail database/instance, configuring Ubuntu and a static IP, and deploying application instances.

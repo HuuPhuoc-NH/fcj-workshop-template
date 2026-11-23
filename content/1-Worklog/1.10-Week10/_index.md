@@ -31,6 +31,19 @@ Create the VPC, security groups, and subnet group; launch an RDS database and ve
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the Amazon Relational Database Service (RDS) workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 11
+
+- Continue learning and practicing **Amazon Lightsail** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+
 ### Week 10 Image Evidence:
 
 Evidence of creating the VPC, security groups, subnet group, RDS database, and endpoint.

@@ -30,3 +30,17 @@ Learn the Support Center, support plans, and how to create a support case.
 - Understood the role of **AWS Support** in AWS.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
+
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the AWS Support workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 4
+
+- Continue learning and practicing **AWS Identity and Access Management (IAM)** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+

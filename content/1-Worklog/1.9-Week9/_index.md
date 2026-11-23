@@ -31,6 +31,19 @@ Create a bucket, manage objects, configure access, and static website hosting.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the Amazon S3 workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 10
+
+- Continue learning and practicing **Amazon Relational Database Service (RDS)** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+
 ### Week 9 Image Evidence:
 
 Evidence of creating the bucket, configuring it, and working with the S3 static website.

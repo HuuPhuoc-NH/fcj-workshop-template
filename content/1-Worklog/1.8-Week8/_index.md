@@ -31,6 +31,19 @@ Create a Cloud9 environment, configure the development environment, and run sour
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the AWS Cloud9 workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 9
+
+- Continue learning and practicing **Amazon S3** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+
 ### Week 8 Image Evidence:
 
 Evidence of creating and using the Cloud9 development environment.

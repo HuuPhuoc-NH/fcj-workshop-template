@@ -30,3 +30,17 @@ Create and attach an IAM role so EC2 applications can use temporary credentials.
 - Understood the role of **IAM Roles for EC2** in AWS.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
+
+### Difficulties encountered
+
+| Problem | Resolution |
+| --- | --- |
+| I was not familiar with the IAM Roles for EC2 workflow and console interface. | Re-read the AWS guide, practice step by step, and verify the result after each action. |
+| Configuration or permission errors may occur. | Check the Region, policies, and security settings against the official guide. |
+
+### Plan for Week 8
+
+- Continue learning and practicing **AWS Cloud9** using the AWS guide.
+- Record configuration details, verification results, and lessons learned.
+- Prepare the resources required for the next week.
+

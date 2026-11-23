@@ -30,3 +30,17 @@ Thiết lập ngân sách chi phí, theo dõi mức sử dụng và cấu hình 
 - Hiểu vai trò của **AWS Budgets** trong AWS.
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
+
+### Khó khăn gặp phải:
+
+| Vấn đề | Cách giải quyết |
+| --- | --- |
+| Chưa quen với quy trình và giao diện của AWS Budgets. | Đọc lại tài liệu AWS, thực hành từng bước và kiểm tra kết quả sau mỗi thao tác. |
+| Có thể gặp lỗi cấu hình hoặc quyền truy cập. | Kiểm tra lại Region, policy, security settings và đối chiếu với hướng dẫn chính thức. |
+
+### Kế hoạch tuần 3
+
+- Tiếp tục học và thực hành **AWS Support** theo hướng dẫn AWS.
+- Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
+- Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
+

@@ -30,3 +30,17 @@ Tìm hiểu user, group, policy, role và nguyên tắc cấp quyền tối thi�
 - Hiểu vai trò của **AWS Identity and Access Management (IAM)** trong AWS.
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
+
+### Khó khăn gặp phải:
+
+| Vấn đề | Cách giải quyết |
+| --- | --- |
+| Chưa quen với quy trình và giao diện của AWS IAM. | Đọc lại tài liệu AWS, thực hành từng bước và kiểm tra kết quả sau mỗi thao tác. |
+| Có thể gặp lỗi cấu hình hoặc quyền truy cập. | Kiểm tra lại Region, policy, security settings và đối chiếu với hướng dẫn chính thức. |
+
+### Kế hoạch tuần 5
+
+- Tiếp tục học và thực hành **Amazon VPC** theo hướng dẫn AWS.
+- Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
+- Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
+

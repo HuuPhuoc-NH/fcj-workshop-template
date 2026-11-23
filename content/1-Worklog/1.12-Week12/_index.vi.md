@@ -31,6 +31,19 @@ pre: " <b> 1.12. </b> "
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+### Khó khăn gặp phải:
+
+| Vấn đề | Cách giải quyết |
+| --- | --- |
+| Chưa quen với quy trình và giao diện của Amazon Lightsail Containers. | Đọc lại tài liệu AWS, thực hành từng bước và kiểm tra kết quả sau mỗi thao tác. |
+| Có thể gặp lỗi cấu hình hoặc quyền truy cập. | Kiểm tra lại Region, policy, security settings và đối chiếu với hướng dẫn chính thức. |
+
+### Kế hoạch sau kỳ thực tập
+
+- Tổng hợp lại kiến thức AWS đã học trong 12 tuần.
+- Hoàn thiện báo cáo, rà soát minh chứng và chuẩn bị phần trình bày.
+- Tiếp tục luyện tập triển khai các tài nguyên AWS theo hướng dẫn chính thức.
+
 ### Bằng chứng hình ảnh tuần 12:
 
 Bằng chứng triển khai và kiểm tra phần container/application trên Lightsail.

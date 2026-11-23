@@ -31,6 +31,19 @@ Tạo bucket, quản lý object, cấu hình quyền truy cập và static websi
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+### Khó khăn gặp phải:
+
+| Vấn đề | Cách giải quyết |
+| --- | --- |
+| Chưa quen với quy trình và giao diện của Amazon S3. | Đọc lại tài liệu AWS, thực hành từng bước và kiểm tra kết quả sau mỗi thao tác. |
+| Có thể gặp lỗi cấu hình hoặc quyền truy cập. | Kiểm tra lại Region, policy, security settings và đối chiếu với hướng dẫn chính thức. |
+
+### Kế hoạch tuần 10
+
+- Tiếp tục học và thực hành **Amazon RDS** theo hướng dẫn AWS.
+- Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
+- Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
+
 ### Bằng chứng hình ảnh tuần 9:
 
 Bằng chứng tạo bucket, cấu hình và thao tác với static website trên S3.
