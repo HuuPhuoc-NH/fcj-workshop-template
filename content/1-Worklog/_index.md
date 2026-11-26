@@ -22,5 +22,3 @@ The worklog is divided into 12 weeks. Each week presents one AWS topic with its 
 | Week 11 | Simple application deployment with Amazon Lightsail | [Week 11 Worklog](1.11-week11/) |
 | Week 12 | Container deployment with Amazon Lightsail Containers | [Week 12 Worklog](1.12-week12/) |
 
-**References:** [Sample worklog](https://thanhzicne.github.io/aws-learning-journey/vi/1-worklog/) · [GitHub](https://github.com/HuuPhuoc-NH/fcj-workshop-template)
-

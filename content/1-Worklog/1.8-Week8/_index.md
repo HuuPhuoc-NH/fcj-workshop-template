@@ -31,6 +31,20 @@ Create a Cloud9 environment, configure the development environment, and run sour
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Create and use an AWS Cloud9 environment
+
+Created the Cloud9 development environment, configured it, and verified its operation using the following screenshots.
+
+![Evidence screenshot 1 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_01.png)
+
+![Evidence screenshot 2 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_02.png)
+
+![Evidence screenshot 3 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_03.png)
+
+![Evidence screenshot 4 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_04.png)
+
+![Evidence screenshot 5 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_05.png)
+
 ### Difficulties encountered
 
 | Problem | Resolution |
@@ -44,16 +58,3 @@ Create a Cloud9 environment, configure the development environment, and run sour
 - Record configuration details, verification results, and lessons learned.
 - Prepare the resources required for the next week.
 
-### Week 8 Image Evidence:
-
-Evidence of creating and using the Cloud9 development environment.
-
-![Evidence screenshot 1 - AWS Cloud9](/images/worklog/cloud9_01.png)
-
-![Evidence screenshot 2 - AWS Cloud9](/images/worklog/cloud9_02.png)
-
-![Evidence screenshot 3 - AWS Cloud9](/images/worklog/cloud9_03.png)
-
-![Evidence screenshot 4 - AWS Cloud9](/images/worklog/cloud9_04.png)
-
-![Evidence screenshot 5 - AWS Cloud9](/images/worklog/cloud9_05.png)

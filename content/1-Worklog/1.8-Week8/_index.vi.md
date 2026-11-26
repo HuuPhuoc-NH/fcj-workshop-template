@@ -31,6 +31,20 @@ Tạo môi trường Cloud9, cấu hình môi trường phát triển và chạy
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Tạo và sử dụng môi trường AWS Cloud9
+
+Tạo môi trường phát triển Cloud9, cấu hình môi trường và kiểm tra hoạt động bằng các ảnh minh chứng sau.
+
+![Ảnh minh chứng 1 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_01.png)
+
+![Ảnh minh chứng 2 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_02.png)
+
+![Ảnh minh chứng 3 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_03.png)
+
+![Ảnh minh chứng 4 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_04.png)
+
+![Ảnh minh chứng 5 - AWS Cloud9](/fcj-workshop-template/images/worklog/cloud9_05.png)
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |
@@ -44,16 +58,3 @@ Tạo môi trường Cloud9, cấu hình môi trường phát triển và chạy
 - Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
 - Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
 
-### Bằng chứng hình ảnh tuần 8:
-
-Bằng chứng tạo và sử dụng môi trường phát triển Cloud9.
-
-![Ảnh minh chứng 1 - AWS Cloud9](/images/worklog/cloud9_01.png)
-
-![Ảnh minh chứng 2 - AWS Cloud9](/images/worklog/cloud9_02.png)
-
-![Ảnh minh chứng 3 - AWS Cloud9](/images/worklog/cloud9_03.png)
-
-![Ảnh minh chứng 4 - AWS Cloud9](/images/worklog/cloud9_04.png)
-
-![Ảnh minh chứng 5 - AWS Cloud9](/images/worklog/cloud9_05.png)

@@ -31,6 +31,10 @@ Learn about users, groups, policies, roles, and least-privilege access.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Manage access with AWS IAM
+
+Created the required IAM users, groups, or policies and verified permissions according to the least-privilege principle.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

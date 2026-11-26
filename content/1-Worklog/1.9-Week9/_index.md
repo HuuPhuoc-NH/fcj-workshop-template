@@ -31,6 +31,44 @@ Create a bucket, manage objects, configure access, and static website hosting.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Create a bucket and deploy Static Website Hosting on Amazon S3
+
+Created the bucket, configured access, uploaded objects, and verified static website hosting using the following screenshots.
+
+![Evidence screenshot 1 - Amazon S3](/fcj-workshop-template/images/worklog/s3_01.png)
+
+![Evidence screenshot 2 - Amazon S3](/fcj-workshop-template/images/worklog/s3_02.png)
+
+![Evidence screenshot 3 - Amazon S3](/fcj-workshop-template/images/worklog/s3_03.png)
+
+![Evidence screenshot 4 - Amazon S3](/fcj-workshop-template/images/worklog/s3_04.png)
+
+![Evidence screenshot 5 - Amazon S3](/fcj-workshop-template/images/worklog/s3_05.png)
+
+![Evidence screenshot 6 - Amazon S3](/fcj-workshop-template/images/worklog/s3_06.png)
+
+![Evidence screenshot 7 - Amazon S3](/fcj-workshop-template/images/worklog/s3_07.png)
+
+![Evidence screenshot 8 - Amazon S3](/fcj-workshop-template/images/worklog/s3_08.png)
+
+![Evidence screenshot 9 - Amazon S3](/fcj-workshop-template/images/worklog/s3_09.png)
+
+![Evidence screenshot 10 - Amazon S3](/fcj-workshop-template/images/worklog/s3_10.png)
+
+![Evidence screenshot 11 - Amazon S3](/fcj-workshop-template/images/worklog/s3_11.png)
+
+![Evidence screenshot 12 - Amazon S3](/fcj-workshop-template/images/worklog/s3_12.png)
+
+![Evidence screenshot 13 - Amazon S3](/fcj-workshop-template/images/worklog/s3_13.png)
+
+![Evidence screenshot 14 - Amazon S3](/fcj-workshop-template/images/worklog/s3_14.png)
+
+![Evidence screenshot 15 - Amazon S3](/fcj-workshop-template/images/worklog/s3_15.png)
+
+![Evidence screenshot 16 - Amazon S3](/fcj-workshop-template/images/worklog/s3_16.png)
+
+![Evidence screenshot 17 - Amazon S3](/fcj-workshop-template/images/worklog/s3_17.png)
+
 ### Difficulties encountered
 
 | Problem | Resolution |
@@ -44,40 +82,3 @@ Create a bucket, manage objects, configure access, and static website hosting.
 - Record configuration details, verification results, and lessons learned.
 - Prepare the resources required for the next week.
 
-### Week 9 Image Evidence:
-
-Evidence of creating the bucket, configuring it, and working with the S3 static website.
-
-![Evidence screenshot 1 - Amazon S3](/images/worklog/s3_01.png)
-
-![Evidence screenshot 2 - Amazon S3](/images/worklog/s3_02.png)
-
-![Evidence screenshot 3 - Amazon S3](/images/worklog/s3_03.png)
-
-![Evidence screenshot 4 - Amazon S3](/images/worklog/s3_04.png)
-
-![Evidence screenshot 5 - Amazon S3](/images/worklog/s3_05.png)
-
-![Evidence screenshot 6 - Amazon S3](/images/worklog/s3_06.png)
-
-![Evidence screenshot 7 - Amazon S3](/images/worklog/s3_07.png)
-
-![Evidence screenshot 8 - Amazon S3](/images/worklog/s3_08.png)
-
-![Evidence screenshot 9 - Amazon S3](/images/worklog/s3_09.png)
-
-![Evidence screenshot 10 - Amazon S3](/images/worklog/s3_10.png)
-
-![Evidence screenshot 11 - Amazon S3](/images/worklog/s3_11.png)
-
-![Evidence screenshot 12 - Amazon S3](/images/worklog/s3_12.png)
-
-![Evidence screenshot 13 - Amazon S3](/images/worklog/s3_13.png)
-
-![Evidence screenshot 14 - Amazon S3](/images/worklog/s3_14.png)
-
-![Evidence screenshot 15 - Amazon S3](/images/worklog/s3_15.png)
-
-![Evidence screenshot 16 - Amazon S3](/images/worklog/s3_16.png)
-
-![Evidence screenshot 17 - Amazon S3](/images/worklog/s3_17.png)

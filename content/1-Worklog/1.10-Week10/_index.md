@@ -31,6 +31,26 @@ Create the VPC, security groups, and subnet group; launch an RDS database and ve
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Deploy a relational database with Amazon RDS
+
+Created the VPC, security group, subnet group, and RDS database, then verified the endpoint using the following screenshots.
+
+![Evidence screenshot 1 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_01.png)
+
+![Evidence screenshot 2 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_02.png)
+
+![Evidence screenshot 3 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_03.png)
+
+![Evidence screenshot 4 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_04.png)
+
+![Evidence screenshot 5 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_05.png)
+
+![Evidence screenshot 6 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_06.png)
+
+![Evidence screenshot 7 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_07.png)
+
+![Evidence screenshot 8 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_08.png)
+
 ### Difficulties encountered
 
 | Problem | Resolution |
@@ -44,22 +64,3 @@ Create the VPC, security groups, and subnet group; launch an RDS database and ve
 - Record configuration details, verification results, and lessons learned.
 - Prepare the resources required for the next week.
 
-### Week 10 Image Evidence:
-
-Evidence of creating the VPC, security groups, subnet group, RDS database, and endpoint.
-
-![Evidence screenshot 1 - Amazon Relational Database Service (RDS)](/images/worklog/rds_01.png)
-
-![Evidence screenshot 2 - Amazon Relational Database Service (RDS)](/images/worklog/rds_02.png)
-
-![Evidence screenshot 3 - Amazon Relational Database Service (RDS)](/images/worklog/rds_03.png)
-
-![Evidence screenshot 4 - Amazon Relational Database Service (RDS)](/images/worklog/rds_04.png)
-
-![Evidence screenshot 5 - Amazon Relational Database Service (RDS)](/images/worklog/rds_05.png)
-
-![Evidence screenshot 6 - Amazon Relational Database Service (RDS)](/images/worklog/rds_06.png)
-
-![Evidence screenshot 7 - Amazon Relational Database Service (RDS)](/images/worklog/rds_07.png)
-
-![Evidence screenshot 8 - Amazon Relational Database Service (RDS)](/images/worklog/rds_08.png)

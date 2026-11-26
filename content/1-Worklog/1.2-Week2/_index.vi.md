@@ -31,6 +31,10 @@ Thiết lập ngân sách chi phí, theo dõi mức sử dụng và cấu hình 
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Tạo ngân sách với AWS Budgets
+
+Tạo budget, đặt ngưỡng cảnh báo chi phí và kiểm tra trạng thái thông báo ngân sách.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

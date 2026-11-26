@@ -31,6 +31,44 @@ Tạo bucket, quản lý object, cấu hình quyền truy cập và static websi
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Tạo bucket và triển khai Static Website Hosting trên Amazon S3
+
+Tạo bucket, cấu hình quyền truy cập, upload object và kiểm tra static website hosting bằng các ảnh minh chứng sau.
+
+![Ảnh minh chứng 1 - Amazon S3](/fcj-workshop-template/images/worklog/s3_01.png)
+
+![Ảnh minh chứng 2 - Amazon S3](/fcj-workshop-template/images/worklog/s3_02.png)
+
+![Ảnh minh chứng 3 - Amazon S3](/fcj-workshop-template/images/worklog/s3_03.png)
+
+![Ảnh minh chứng 4 - Amazon S3](/fcj-workshop-template/images/worklog/s3_04.png)
+
+![Ảnh minh chứng 5 - Amazon S3](/fcj-workshop-template/images/worklog/s3_05.png)
+
+![Ảnh minh chứng 6 - Amazon S3](/fcj-workshop-template/images/worklog/s3_06.png)
+
+![Ảnh minh chứng 7 - Amazon S3](/fcj-workshop-template/images/worklog/s3_07.png)
+
+![Ảnh minh chứng 8 - Amazon S3](/fcj-workshop-template/images/worklog/s3_08.png)
+
+![Ảnh minh chứng 9 - Amazon S3](/fcj-workshop-template/images/worklog/s3_09.png)
+
+![Ảnh minh chứng 10 - Amazon S3](/fcj-workshop-template/images/worklog/s3_10.png)
+
+![Ảnh minh chứng 11 - Amazon S3](/fcj-workshop-template/images/worklog/s3_11.png)
+
+![Ảnh minh chứng 12 - Amazon S3](/fcj-workshop-template/images/worklog/s3_12.png)
+
+![Ảnh minh chứng 13 - Amazon S3](/fcj-workshop-template/images/worklog/s3_13.png)
+
+![Ảnh minh chứng 14 - Amazon S3](/fcj-workshop-template/images/worklog/s3_14.png)
+
+![Ảnh minh chứng 15 - Amazon S3](/fcj-workshop-template/images/worklog/s3_15.png)
+
+![Ảnh minh chứng 16 - Amazon S3](/fcj-workshop-template/images/worklog/s3_16.png)
+
+![Ảnh minh chứng 17 - Amazon S3](/fcj-workshop-template/images/worklog/s3_17.png)
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |
@@ -44,40 +82,3 @@ Tạo bucket, quản lý object, cấu hình quyền truy cập và static websi
 - Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
 - Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
 
-### Bằng chứng hình ảnh tuần 9:
-
-Bằng chứng tạo bucket, cấu hình và thao tác với static website trên S3.
-
-![Ảnh minh chứng 1 - Amazon S3](/images/worklog/s3_01.png)
-
-![Ảnh minh chứng 2 - Amazon S3](/images/worklog/s3_02.png)
-
-![Ảnh minh chứng 3 - Amazon S3](/images/worklog/s3_03.png)
-
-![Ảnh minh chứng 4 - Amazon S3](/images/worklog/s3_04.png)
-
-![Ảnh minh chứng 5 - Amazon S3](/images/worklog/s3_05.png)
-
-![Ảnh minh chứng 6 - Amazon S3](/images/worklog/s3_06.png)
-
-![Ảnh minh chứng 7 - Amazon S3](/images/worklog/s3_07.png)
-
-![Ảnh minh chứng 8 - Amazon S3](/images/worklog/s3_08.png)
-
-![Ảnh minh chứng 9 - Amazon S3](/images/worklog/s3_09.png)
-
-![Ảnh minh chứng 10 - Amazon S3](/images/worklog/s3_10.png)
-
-![Ảnh minh chứng 11 - Amazon S3](/images/worklog/s3_11.png)
-
-![Ảnh minh chứng 12 - Amazon S3](/images/worklog/s3_12.png)
-
-![Ảnh minh chứng 13 - Amazon S3](/images/worklog/s3_13.png)
-
-![Ảnh minh chứng 14 - Amazon S3](/images/worklog/s3_14.png)
-
-![Ảnh minh chứng 15 - Amazon S3](/images/worklog/s3_15.png)
-
-![Ảnh minh chứng 16 - Amazon S3](/images/worklog/s3_16.png)
-
-![Ảnh minh chứng 17 - Amazon S3](/images/worklog/s3_17.png)

@@ -31,6 +31,10 @@ Tạo và gắn IAM role cho EC2 để ứng dụng dùng temporary credentials.
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Gán IAM Role cho EC2
+
+Tạo hoặc chọn IAM role phù hợp, gán instance profile cho EC2 và kiểm tra quyền của instance.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

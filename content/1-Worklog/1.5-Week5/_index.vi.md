@@ -31,6 +31,10 @@ Tạo VPC, subnet và các thành phần mạng cơ bản.
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Thiết kế mạng với Amazon VPC
+
+Tạo VPC, subnet, route table và các thành phần mạng cần thiết theo hướng dẫn AWS.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

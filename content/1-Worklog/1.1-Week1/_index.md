@@ -31,6 +31,10 @@ Create and activate an AWS account; become familiar with the AWS Management Cons
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Create and configure an AWS Account
+
+Created an AWS Free Tier account, became familiar with the AWS Management Console, and checked the working Region.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

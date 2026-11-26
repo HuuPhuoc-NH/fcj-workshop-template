@@ -31,6 +31,10 @@ Tạo và kích hoạt tài khoản AWS; làm quen với AWS Management Console 
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Tạo và cấu hình AWS Account
+
+Tạo tài khoản AWS Free Tier, làm quen với AWS Management Console và kiểm tra Region sử dụng.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

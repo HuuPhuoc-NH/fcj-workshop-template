@@ -31,6 +31,10 @@ Tìm hiểu Support Center, các gói hỗ trợ và cách tạo yêu cầu hỗ
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Tìm hiểu AWS Support
+
+Khám phá AWS Support Center, các kênh hỗ trợ và cách tạo yêu cầu hỗ trợ phù hợp.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

@@ -31,6 +31,24 @@ Create a Lightsail database and instance, configure Ubuntu and a static IP, and 
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Deploy an application on Amazon Lightsail
+
+Created the Lightsail database/instance, configured Ubuntu and a static IP, and deployed the application using the following screenshots.
+
+![Evidence screenshot 1 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_01.png)
+
+![Evidence screenshot 2 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_02.png)
+
+![Evidence screenshot 3 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_03.png)
+
+![Evidence screenshot 4 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_04.png)
+
+![Evidence screenshot 5 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_05.png)
+
+![Evidence screenshot 6 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_06.png)
+
+![Evidence screenshot 7 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_07.png)
+
 ### Difficulties encountered
 
 | Problem | Resolution |
@@ -44,20 +62,3 @@ Create a Lightsail database and instance, configure Ubuntu and a static IP, and 
 - Record configuration details, verification results, and lessons learned.
 - Prepare the resources required for the next week.
 
-### Week 11 Image Evidence:
-
-Evidence of creating the Lightsail database/instance, configuring Ubuntu and a static IP, and deploying application instances.
-
-![Evidence screenshot 1 - Amazon Lightsail](/images/worklog/lightsail_01.png)
-
-![Evidence screenshot 2 - Amazon Lightsail](/images/worklog/lightsail_02.png)
-
-![Evidence screenshot 3 - Amazon Lightsail](/images/worklog/lightsail_03.png)
-
-![Evidence screenshot 4 - Amazon Lightsail](/images/worklog/lightsail_04.png)
-
-![Evidence screenshot 5 - Amazon Lightsail](/images/worklog/lightsail_05.png)
-
-![Evidence screenshot 6 - Amazon Lightsail](/images/worklog/lightsail_06.png)
-
-![Evidence screenshot 7 - Amazon Lightsail](/images/worklog/lightsail_07.png)

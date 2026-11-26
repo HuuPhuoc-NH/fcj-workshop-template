@@ -31,6 +31,26 @@ Tạo VPC/security group/subnet group, khởi tạo database RDS và kiểm tra 
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Triển khai cơ sở dữ liệu với Amazon RDS
+
+Tạo VPC, security group, subnet group và database RDS; sau đó kiểm tra endpoint bằng các ảnh minh chứng sau.
+
+![Ảnh minh chứng 1 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_01.png)
+
+![Ảnh minh chứng 2 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_02.png)
+
+![Ảnh minh chứng 3 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_03.png)
+
+![Ảnh minh chứng 4 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_04.png)
+
+![Ảnh minh chứng 5 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_05.png)
+
+![Ảnh minh chứng 6 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_06.png)
+
+![Ảnh minh chứng 7 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_07.png)
+
+![Ảnh minh chứng 8 - Amazon RDS](/fcj-workshop-template/images/worklog/rds_08.png)
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |
@@ -44,22 +64,3 @@ Tạo VPC/security group/subnet group, khởi tạo database RDS và kiểm tra 
 - Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
 - Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
 
-### Bằng chứng hình ảnh tuần 10:
-
-Bằng chứng tạo VPC, security groups, subnet group, database RDS và endpoint.
-
-![Ảnh minh chứng 1 - Amazon Relational Database Service (RDS)](/images/worklog/rds_01.png)
-
-![Ảnh minh chứng 2 - Amazon Relational Database Service (RDS)](/images/worklog/rds_02.png)
-
-![Ảnh minh chứng 3 - Amazon Relational Database Service (RDS)](/images/worklog/rds_03.png)
-
-![Ảnh minh chứng 4 - Amazon Relational Database Service (RDS)](/images/worklog/rds_04.png)
-
-![Ảnh minh chứng 5 - Amazon Relational Database Service (RDS)](/images/worklog/rds_05.png)
-
-![Ảnh minh chứng 6 - Amazon Relational Database Service (RDS)](/images/worklog/rds_06.png)
-
-![Ảnh minh chứng 7 - Amazon Relational Database Service (RDS)](/images/worklog/rds_07.png)
-
-![Ảnh minh chứng 8 - Amazon Relational Database Service (RDS)](/images/worklog/rds_08.png)

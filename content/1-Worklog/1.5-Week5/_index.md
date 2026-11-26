@@ -31,6 +31,10 @@ Create a VPC, subnets, and basic networking components.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Design a network with Amazon VPC
+
+Created the VPC, subnets, route tables, and other required network components by following the AWS guide.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

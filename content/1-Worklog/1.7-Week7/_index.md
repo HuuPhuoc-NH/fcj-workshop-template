@@ -31,6 +31,10 @@ Create and attach an IAM role so EC2 applications can use temporary credentials.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Attach an IAM Role to EC2
+
+Created or selected the required IAM role, attached its instance profile to EC2, and verified the instance permissions.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

@@ -31,6 +31,10 @@ Launch an EC2 instance, select an AMI and instance type, and connect to the serv
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Launch and connect to an Amazon EC2 instance
+
+Launched an EC2 instance, configured its security group, and verified connectivity using the appropriate method.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

@@ -31,6 +31,10 @@ Set a cost budget, monitor usage, and configure alerts.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Create a budget with AWS Budgets
+
+Created a budget, configured cost alert thresholds, and verified the budget notification status.
+
 ### Difficulties encountered
 
 | Problem | Resolution |

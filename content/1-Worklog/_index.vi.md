@@ -22,5 +22,3 @@ Worklog được chia thành 12 tuần. Mỗi tuần trình bày một chủ đ�
 | Tuần 11 | Triển khai ứng dụng đơn giản với Amazon Lightsail | [Nhật ký công việc Tuần 11](1.11-week11/) |
 | Tuần 12 | Triển khai container với Amazon Lightsail Containers | [Nhật ký công việc Tuần 12](1.12-week12/) |
 
-**Tài liệu tham khảo:** [Worklog mẫu](https://thanhzicne.github.io/aws-learning-journey/vi/1-worklog/) · [GitHub](https://github.com/HuuPhuoc-NH/fcj-workshop-template)
-

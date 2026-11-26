@@ -31,6 +31,14 @@ Package and deploy a container service on Lightsail; verify the application.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Deploy a container with Amazon Lightsail Containers
+
+Packaged, deployed, and verified the container/application on Lightsail using the following screenshots.
+
+![Evidence screenshot 1 - Amazon Lightsail Containers](/fcj-workshop-template/images/worklog/lightsail_08.png)
+
+![Evidence screenshot 2 - Amazon Lightsail Containers](/fcj-workshop-template/images/worklog/lightsail_09.png)
+
 ### Difficulties encountered
 
 | Problem | Resolution |
@@ -44,10 +52,3 @@ Package and deploy a container service on Lightsail; verify the application.
 - Finalize the report, review the evidence, and prepare the presentation.
 - Continue practicing AWS resource deployments using official documentation.
 
-### Week 12 Image Evidence:
-
-Evidence of deploying and verifying the Lightsail container/application.
-
-![Evidence screenshot 1 - Amazon Lightsail Containers](/images/worklog/lightsail_08.png)
-
-![Evidence screenshot 2 - Amazon Lightsail Containers](/images/worklog/lightsail_09.png)

@@ -31,6 +31,10 @@ Tìm hiểu user, group, policy, role và nguyên tắc cấp quyền tối thi�
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Quản lý quyền truy cập với AWS IAM
+
+Tạo IAM user, group hoặc policy cần thiết và kiểm tra quyền truy cập theo nguyên tắc least privilege.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

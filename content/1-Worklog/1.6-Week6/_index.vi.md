@@ -31,6 +31,10 @@ Khởi tạo EC2 instance, chọn AMI/instance type và kết nối máy chủ.
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Khởi chạy và kết nối Amazon EC2
+
+Khởi chạy EC2, cấu hình security group và kiểm tra kết nối đến instance theo phương thức phù hợp.
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |

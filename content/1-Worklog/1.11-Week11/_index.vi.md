@@ -31,6 +31,24 @@ Tạo database và instance Lightsail, cấu hình Ubuntu, static IP và ứng d
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Triển khai ứng dụng trên Amazon Lightsail
+
+Tạo database/instance Lightsail, cấu hình Ubuntu, static IP và instance ứng dụng bằng các ảnh minh chứng sau.
+
+![Ảnh minh chứng 1 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_01.png)
+
+![Ảnh minh chứng 2 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_02.png)
+
+![Ảnh minh chứng 3 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_03.png)
+
+![Ảnh minh chứng 4 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_04.png)
+
+![Ảnh minh chứng 5 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_05.png)
+
+![Ảnh minh chứng 6 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_06.png)
+
+![Ảnh minh chứng 7 - Amazon Lightsail](/fcj-workshop-template/images/worklog/lightsail_07.png)
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |
@@ -44,20 +62,3 @@ Tạo database và instance Lightsail, cấu hình Ubuntu, static IP và ứng d
 - Ghi lại cấu hình, kết quả kiểm tra và các lỗi cần rút kinh nghiệm.
 - Chuẩn bị tài nguyên cần thiết cho tuần tiếp theo.
 
-### Bằng chứng hình ảnh tuần 11:
-
-Bằng chứng tạo database/instance Lightsail, cấu hình Ubuntu, static IP và instance ứng dụng.
-
-![Ảnh minh chứng 1 - Amazon Lightsail](/images/worklog/lightsail_01.png)
-
-![Ảnh minh chứng 2 - Amazon Lightsail](/images/worklog/lightsail_02.png)
-
-![Ảnh minh chứng 3 - Amazon Lightsail](/images/worklog/lightsail_03.png)
-
-![Ảnh minh chứng 4 - Amazon Lightsail](/images/worklog/lightsail_04.png)
-
-![Ảnh minh chứng 5 - Amazon Lightsail](/images/worklog/lightsail_05.png)
-
-![Ảnh minh chứng 6 - Amazon Lightsail](/images/worklog/lightsail_06.png)
-
-![Ảnh minh chứng 7 - Amazon Lightsail](/images/worklog/lightsail_07.png)

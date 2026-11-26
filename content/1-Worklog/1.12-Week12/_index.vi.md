@@ -31,6 +31,14 @@ pre: " <b> 1.12. </b> "
 - Thực hiện được các thao tác chính theo hướng dẫn.
 - Biết cách kiểm tra kết quả và ghi nhận cấu hình để tái sử dụng.
 
+#### Bài tập 1: Triển khai container với Amazon Lightsail Containers
+
+Đóng gói, triển khai và kiểm tra container/application trên Lightsail bằng các ảnh minh chứng sau.
+
+![Ảnh minh chứng 1 - Amazon Lightsail Containers](/fcj-workshop-template/images/worklog/lightsail_08.png)
+
+![Ảnh minh chứng 2 - Amazon Lightsail Containers](/fcj-workshop-template/images/worklog/lightsail_09.png)
+
 ### Khó khăn gặp phải:
 
 | Vấn đề | Cách giải quyết |
@@ -44,10 +52,3 @@ pre: " <b> 1.12. </b> "
 - Hoàn thiện báo cáo, rà soát minh chứng và chuẩn bị phần trình bày.
 - Tiếp tục luyện tập triển khai các tài nguyên AWS theo hướng dẫn chính thức.
 
-### Bằng chứng hình ảnh tuần 12:
-
-Bằng chứng triển khai và kiểm tra phần container/application trên Lightsail.
-
-![Ảnh minh chứng 1 - Amazon Lightsail Containers](/images/worklog/lightsail_08.png)
-
-![Ảnh minh chứng 2 - Amazon Lightsail Containers](/images/worklog/lightsail_09.png)

@@ -31,6 +31,10 @@ Learn the Support Center, support plans, and how to create a support case.
 - Completed the main hands-on steps from the guide.
 - Learned how to verify results and record reusable configuration details.
 
+#### Exercise 1: Explore AWS Support
+
+Explored the AWS Support Center, available support channels, and the process for creating an appropriate support case.
+
 ### Difficulties encountered
 
 | Problem | Resolution |
