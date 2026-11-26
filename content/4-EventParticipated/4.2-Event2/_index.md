@@ -1,1 +1,16 @@
----\ntitle: "Event 2"\ndate: 2026-11-26\nweight: 2\nchapter: false\npre: " <b> 4.2. </b> "\n---\n\n### Event information\n\n- Event name: [Enter the event name]\n- Date and time: [Enter the date and time]\n- Location: [Enter the location or online format]\n- Role: [Enter your role]\n- Main activities: [Describe the activities]\n- Outcome: [Enter lessons learned or contribution]\n
+---
+title: "Event 2"
+date: 2026-11-26
+weight: 2
+chapter: false
+pre: " <b> 4.2. </b> "
+---
+
+### Event information
+
+- Event name: [Enter the event name]
+- Date and time: [Enter the date and time]
+- Location: [Enter the location or online format]
+- Role: [Enter your role]
+- Main activities: [Describe the activities]
+- Outcome: [Enter lessons learned or contribution]

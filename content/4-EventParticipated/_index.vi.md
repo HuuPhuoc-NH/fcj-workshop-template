@@ -1,1 +1,31 @@
----\ntitle: "Các events đã tham gia"\ndate: 2026-11-26\nweight: 4\nchapter: false\npre: " <b> 4. </b> "\n---\n\nTrong phần này, hãy liệt kê các sự kiện bạn thực sự đã tham gia trong thời gian thực tập. Không giữ lại thông tin sự kiện mẫu nếu bạn không tham dự.\n\n### [Event 1](4.1-Event1/)\n\n| Thông tin | Nội dung |\n| --- | --- |\n| Tên sự kiện | [Điền tên sự kiện] |\n| Thời gian | [Điền ngày và giờ] |\n| Địa điểm | [Điền địa điểm hoặc hình thức online] |\n| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |\n| Nội dung chính | [Mô tả ngắn gọn] |\n| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |\n\n### [Event 2](4.2-Event2/)\n\n| Thông tin | Nội dung |\n| --- | --- |\n| Tên sự kiện | [Điền tên sự kiện] |\n| Thời gian | [Điền ngày và giờ] |\n| Địa điểm | [Điền địa điểm hoặc hình thức online] |\n| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |\n| Nội dung chính | [Mô tả ngắn gọn] |\n| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |\n
+---
+title: "Các events đã tham gia"
+date: 2026-11-26
+weight: 4
+chapter: false
+pre: " <b> 4. </b> "
+---
+
+Trong phần này, hãy liệt kê các sự kiện bạn thực sự đã tham gia trong thời gian thực tập. Không giữ lại thông tin sự kiện mẫu nếu bạn không tham dự.
+
+### [Event 1](4.1-Event1/)
+
+| Thông tin | Nội dung |
+| --- | --- |
+| Tên sự kiện | [Điền tên sự kiện] |
+| Thời gian | [Điền ngày và giờ] |
+| Địa điểm | [Điền địa điểm hoặc hình thức online] |
+| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |
+| Nội dung chính | [Mô tả ngắn gọn] |
+| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |
+
+### [Event 2](4.2-Event2/)
+
+| Thông tin | Nội dung |
+| --- | --- |
+| Tên sự kiện | [Điền tên sự kiện] |
+| Thời gian | [Điền ngày và giờ] |
+| Địa điểm | [Điền địa điểm hoặc hình thức online] |
+| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |
+| Nội dung chính | [Mô tả ngắn gọn] |
+| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |

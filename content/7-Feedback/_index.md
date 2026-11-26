@@ -1,1 +1,30 @@
----\ntitle: "Sharing and Feedback"\ndate: 2026-11-26\nweight: 7\nchapter: false\npre: " <b> 7. </b> "\n---\n\nWrite your personal feedback about the First Cloud AI Journey program. Use the structure below, but replace it with your own experience.\n\n### Overall evaluation\n\n1. **Working environment:** [Enter your feedback]\n2. **Mentor / team admin support:** [Enter your feedback]\n3. **Relevance to your major:** [Enter your feedback]\n4. **Learning and skill-development opportunities:** [Enter your feedback]\n5. **Culture and teamwork:** [Enter your feedback]\n6. **Intern benefits or support:** [Enter your feedback]\n\n### Most satisfying part\n\n[Enter what you liked most about the internship]\n\n### Areas for improvement\n\n[Enter suggestions for improving the program or internship experience]\n\n### Suggestions and wishes\n\n[Enter your suggestions or wishes]\n
+---
+title: "Sharing and Feedback"
+date: 2026-11-26
+weight: 7
+chapter: false
+pre: " <b> 7. </b> "
+---
+
+Write your personal feedback about the First Cloud AI Journey program. Use the structure below, but replace it with your own experience.
+
+### Overall evaluation
+
+1. **Working environment:** [Enter your feedback]
+2. **Mentor / team admin support:** [Enter your feedback]
+3. **Relevance to your major:** [Enter your feedback]
+4. **Learning and skill-development opportunities:** [Enter your feedback]
+5. **Culture and teamwork:** [Enter your feedback]
+6. **Intern benefits or support:** [Enter your feedback]
+
+### Most satisfying part
+
+[Enter what you liked most about the internship]
+
+### Areas for improvement
+
+[Enter suggestions for improving the program or internship experience]
+
+### Suggestions and wishes
+
+[Enter your suggestions or wishes]

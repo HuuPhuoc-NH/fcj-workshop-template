@@ -1,1 +1,41 @@
----\ntitle: "Internship Report"\ndate: 2024-01-01\nweight: 1\nchapter: false\n---\n\n\n# Internship Report\n\n\n### Student Information:\n&emsp; **Full Name:** [Enter your full name]\n\n&emsp; **Phone Number:** [Enter your phone number]\n\n&emsp; **Email:** [Enter your email]\n\n&emsp; **University:** [Enter your university]\n\n&emsp; **Major:** [Enter your major]\n\n&emsp; **Class:** [Enter your class]\n\n&emsp; **Internship Company:** [Enter your internship company]\n\n&emsp; **Internship Position:** [Enter your internship position]\n\n&emsp; **Internship Duration:** [Enter your internship dates]\n\n![Your profile picture](/images/avatar.png)\n\n### Report Content\n\n1.  [Worklog](1-Worklog/)\n2.  [Proposal](2-Proposal/)\n3.  [BlogsPosted](3-BlogsPosted/)\n4.  [Events Participated](4-EventParticipated/)\n5.  [Workshop](5-Workshop/)\n6.  [Self-evaluation](6-Self-evaluation/)\n7.  [Sharing and Feedback](7-Feedback/)\n
+---
+title: "Internship Report"
+date: 2024-01-01
+weight: 1
+chapter: false
+---
+
+
+# Internship Report
+
+
+### Student Information:
+&emsp; **Full Name:** [Enter your full name]
+
+&emsp; **Phone Number:** [Enter your phone number]
+
+&emsp; **Email:** [Enter your email]
+
+&emsp; **University:** [Enter your university]
+
+&emsp; **Major:** [Enter your major]
+
+&emsp; **Class:** [Enter your class]
+
+&emsp; **Internship Company:** [Enter your internship company]
+
+&emsp; **Internship Position:** [Enter your internship position]
+
+&emsp; **Internship Duration:** [Enter your internship dates]
+
+![Your profile picture](/images/avatar.png)
+
+### Report Content
+
+1.  [Worklog](1-Worklog/)
+2.  [Proposal](2-Proposal/)
+3.  [BlogsPosted](3-BlogsPosted/)
+4.  [Events Participated](4-EventParticipated/)
+5.  [Workshop](5-Workshop/)
+6.  [Self-evaluation](6-Self-evaluation/)
+7.  [Sharing and Feedback](7-Feedback/)
