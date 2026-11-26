@@ -1,1 +1,37 @@
-name: Deploy Hugo site to GitHub Pages\n\non:\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout source code\n        uses: actions/checkout@v4\n\n      - name: Setup Hugo\n        uses: peaceiris/actions-hugo@v2\n        with:\n          hugo-version: "0.134.3"\n          extended: true\n\n      - name: Build website\n        run: hugo --minify\n\n      - name: Deploy to GitHub Pages\n        uses: peaceiris/actions-gh-pages@v4\n        with:\n          github_token: ${{ secrets.GITHUB_TOKEN }}\n          publish_dir: ./public\n          publish_branch: gh-pages # <- đảm bảo đúng tên nhánh bạn dùng để deploy\n          force_orphan: true # <- đảm bảo xóa lịch sử cũ ở nhánh gh-pages (giảm lỗi)\n
+name: Deploy Hugo site to GitHub Pages
+
+run-name: Deploy Hugo site from ${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.134.3"
+          extended: true
+
+      - name: Build website
+        run: hugo --minify
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
