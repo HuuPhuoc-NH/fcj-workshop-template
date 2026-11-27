@@ -7,23 +7,21 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** [Điền họ và tên của bạn]
+&emsp; **Họ và tên:** Nguyễn Huỳnh Hữu Phước
 
-&emsp; **Số điện thoại:** [Điền số điện thoại]
+&emsp; **Số điện thoại:** 0395105358
 
-&emsp; **Email:** [Điền email]
+&emsp; **Email:** foxmiinaaa@gmail.com
 
-&emsp; **Trường:** [Điền tên trường]
+&emsp; **Trường:** Đại học FPT (FPT University)
 
-&emsp; **Ngành:** [Điền ngành học]
+&emsp; **Ngành:** Kỹ thuật phần mềm (Software Engineering)
 
-&emsp; **Lớp:** [Điền lớp]
+&emsp; **Đơn vị tiếp nhận:** AWS – Chương trình First Cloud AI Journey
 
-&emsp; **Công ty thực tập:** [Điền công ty thực tập]
+&emsp; **Vị trí / Vai trò:** Sinh viên thực tập (Theo chương trình giới thiệu của Đại học FPT)
 
-&emsp; **Vị trí thực tập:** [Điền vị trí thực tập]
-
-&emsp; **Thời gian thực tập:** [Điền thời gian thực tập]
+&emsp; **Thời gian thực tập:** Từ ngày 14/09/2026 đến ngày 04/12/2026
 
 ![Ảnh đại diện của bạn](/images/avatar.png)
 

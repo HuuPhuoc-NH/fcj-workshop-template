@@ -10,23 +10,21 @@ chapter: false
 
 
 ### Student Information:
-&emsp; **Full Name:** [Enter your full name]
+&emsp; **Full Name:** Nguyễn Huỳnh Hữu Phước
 
-&emsp; **Phone Number:** [Enter your phone number]
+&emsp; **Phone Number:** 0395105358
 
-&emsp; **Email:** [Enter your email]
+&emsp; **Email:** foxmiinaaa@gmail.com
 
-&emsp; **University:** [Enter your university]
+&emsp; **University:** FPT University (Đại học FPT)
 
-&emsp; **Major:** [Enter your major]
+&emsp; **Major:** Software Engineering (Kỹ thuật phần mềm)
 
-&emsp; **Class:** [Enter your class]
+&emsp; **Host organization:** AWS – First Cloud AI Journey Program
 
-&emsp; **Internship Company:** [Enter your internship company]
+&emsp; **Position / Role:** Intern (under the FPT University introduction program)
 
-&emsp; **Internship Position:** [Enter your internship position]
-
-&emsp; **Internship Duration:** [Enter your internship dates]
+&emsp; **Internship Duration:** From 14/09/2026 to 04/12/2026
 
 ![Your profile picture](/images/avatar.png)
 
