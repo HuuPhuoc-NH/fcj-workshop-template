@@ -1,31 +1,31 @@
 ---
 title: "Các events đã tham gia"
-date: 2026-11-26
+date: 2026-11-28
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong phần này, hãy liệt kê các sự kiện bạn thực sự đã tham gia trong thời gian thực tập. Không giữ lại thông tin sự kiện mẫu nếu bạn không tham dự.
+Trong thời gian thực tập, em đã tham dự hai sự kiện của cộng đồng FCAJ tại Thành phố Hồ Chí Minh. Mỗi sự kiện giúp em tiếp cận thêm các chủ đề AWS, AI và Cloud thông qua những phần chia sẻ thực tế.
 
 ### [Event 1](4.1-Event1/)
 
 | Thông tin | Nội dung |
 | --- | --- |
-| Tên sự kiện | [Điền tên sự kiện] |
-| Thời gian | [Điền ngày và giờ] |
-| Địa điểm | [Điền địa điểm hoặc hình thức online] |
-| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |
-| Nội dung chính | [Mô tả ngắn gọn] |
-| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |
+| Tên sự kiện | FCAJ Community Day |
+| Thời gian | Ngày 02/10/2026 |
+| Địa điểm | Thành phố Hồ Chí Minh |
+| Vai trò | Người tham dự |
+| Nội dung chính | AI, Cloud, CloudFront, Amazon QuickSight, LLM và hệ thống multi-agent |
+| Kết quả đạt được | Hiểu thêm cách kết hợp kiến thức AI với kiến trúc và dịch vụ AWS |
 
 ### [Event 2](4.2-Event2/)
 
 | Thông tin | Nội dung |
 | --- | --- |
-| Tên sự kiện | [Điền tên sự kiện] |
-| Thời gian | [Điền ngày và giờ] |
-| Địa điểm | [Điền địa điểm hoặc hình thức online] |
-| Vai trò | [Người tham dự / hỗ trợ / diễn giả / vai trò khác] |
-| Nội dung chính | [Mô tả ngắn gọn] |
-| Kết quả đạt được | [Bài học, kỹ năng hoặc đóng góp] |
+| Tên sự kiện | FCAJ Community Day |
+| Thời gian | Ngày 24/10/2026 |
+| Địa điểm | Thành phố Hồ Chí Minh |
+| Vai trò | Người tham dự |
+| Nội dung chính | AI Agents, Voice AI, DevOps, Amazon Bedrock và Model Context Protocol |
+| Kết quả đạt được | Nắm được thêm các hướng ứng dụng AI vào vận hành và xây dựng hệ thống Cloud |
