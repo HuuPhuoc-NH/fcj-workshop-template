@@ -1,5 +1,5 @@
 ---
-title: "5.6 Frontend và phương án CloudFront fallback"
+title: "Frontend và phương án CloudFront fallback"
 date: 2026-11-28
 weight: 6
 chapter: false

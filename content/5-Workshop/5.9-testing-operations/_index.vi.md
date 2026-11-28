@@ -1,5 +1,5 @@
 ---
-title: "5.9 Kiểm thử, quan sát và rollback"
+title: "Kiểm thử, quan sát và rollback"
 date: 2026-11-28
 weight: 9
 chapter: false

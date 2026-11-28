@@ -1,5 +1,5 @@
 ---
-title: "5.5 Cognito and user management"
+title: "Cognito and user management"
 date: 2026-11-28
 weight: 5
 chapter: false

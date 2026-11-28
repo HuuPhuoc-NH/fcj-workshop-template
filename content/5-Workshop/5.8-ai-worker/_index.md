@@ -1,5 +1,5 @@
 ---
-title: "5.8 AI worker and asynchronous processing"
+title: "AI worker and asynchronous processing"
 date: 2026-11-28
 weight: 8
 chapter: false

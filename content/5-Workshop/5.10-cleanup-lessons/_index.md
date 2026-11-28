@@ -1,5 +1,5 @@
 ---
-title: "5.10 Cleanup and lessons learned"
+title: "Cleanup and lessons learned"
 date: 2026-11-28
 weight: 10
 chapter: false

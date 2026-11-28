@@ -1,5 +1,5 @@
 ---
-title: "5.10 Dọn dẹp và bài học"
+title: "Dọn dẹp và bài học"
 date: 2026-11-28
 weight: 10
 chapter: false

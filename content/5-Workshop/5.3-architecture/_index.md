@@ -1,5 +1,5 @@
 ---
-title: "5.3 System architecture"
+title: "System architecture"
 date: 2026-11-28
 weight: 3
 chapter: false

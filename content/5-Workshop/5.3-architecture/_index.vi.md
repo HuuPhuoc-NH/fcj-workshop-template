@@ -1,5 +1,5 @@
 ---
-title: "5.3 Kiến trúc hệ thống"
+title: "Kiến trúc hệ thống"
 date: 2026-11-28
 weight: 3
 chapter: false

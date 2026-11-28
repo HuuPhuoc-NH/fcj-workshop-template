@@ -1,5 +1,5 @@
 ---
-title: "5.7 CI/CD and GitHub OIDC"
+title: "CI/CD and GitHub OIDC"
 date: 2026-11-28
 weight: 7
 chapter: false

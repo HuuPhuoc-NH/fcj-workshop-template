@@ -1,5 +1,5 @@
 ---
-title: "5.8 AI worker và xử lý bất đồng bộ"
+title: "AI worker và xử lý bất đồng bộ"
 date: 2026-11-28
 weight: 8
 chapter: false

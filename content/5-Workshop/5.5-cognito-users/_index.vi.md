@@ -1,5 +1,5 @@
 ---
-title: "5.5 Cognito và quản lý người dùng"
+title: "Cognito và quản lý người dùng"
 date: 2026-11-28
 weight: 5
 chapter: false

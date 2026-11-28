@@ -1,5 +1,5 @@
 ---
-title: "5.4 Backend và RDS"
+title: "Backend và RDS"
 date: 2026-11-28
 weight: 4
 chapter: false

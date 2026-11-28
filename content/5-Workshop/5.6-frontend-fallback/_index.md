@@ -1,5 +1,5 @@
 ---
-title: "5.6 Frontend and CloudFront fallback"
+title: "Frontend and CloudFront fallback"
 date: 2026-11-28
 weight: 6
 chapter: false

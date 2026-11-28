@@ -1,105 +1,121 @@
 ---
 title: "Bản đề xuất"
-date: 2024-01-01
+date: 2026-11-28
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
-
-# IoT Weather Platform for Lab Research
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực
+# AI Exam Maker
+## Nền tảng AWS tối ưu chi phí cho việc soạn và duyệt đề thi có hỗ trợ AI
 
 ### 1. Tóm tắt điều hành
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.
 
-### 2. Tuyên bố vấn đề
-*Vấn đề hiện tại*
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.
+AI Exam Maker là ứng dụng web dành cho giáo viên trung học phổ thông Việt Nam. Ứng dụng hỗ trợ tạo câu hỏi nháp bằng AI, rà soát câu hỏi, ghép thành các phiên bản đề và xuất đề học sinh cùng đáp án riêng. Hệ thống được thiết kế như một môi trường trình diễn có kiểm soát trên AWS, với xử lý AI bất đồng bộ, quy trình duyệt theo tổ bộ môn, khả năng truy vết và mục tiêu nằm trong khoản tín dụng 200 USD.
 
-*Giải pháp*
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.
+Phần đóng góp của em tập trung vào nền tảng và con đường triển khai: chốt phương án AWS, chuẩn bị ranh giới mạng và bảo mật, vận hành ứng dụng trên EC2, cấu hình domain và HTTPS, thiết lập GitHub OIDC, tự động triển khai frontend. Em cũng phối hợp với nhóm frontend để kiểm tra luồng đăng nhập thật.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.
+### 2. Mục tiêu dự án
 
-### 3. Kiến trúc giải pháp
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.
+#### 2.1. Mục tiêu chung
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+Xây dựng một nền tảng đề thi chạy được trên AWS, trong đó giáo viên có thể đăng nhập, yêu cầu AI tạo câu hỏi, rà soát nội dung, gửi duyệt, ghép phiên bản đề và xuất tài liệu cuối theo quy trình có kiểm soát.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+#### 2.2. Mục tiêu hạ tầng
 
-*Dịch vụ AWS sử dụng*
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.
+- Chọn phương án triển khai phù hợp với thời gian hai tuần và khoản tín dụng 200 USD.
+- Giữ EC2 có thể phục vụ qua HTTPS nhưng không cần mở SSH từ Internet.
+- Tách compute công khai khỏi database riêng tư bằng các security group chỉ cho phép lưu lượng cần thiết.
+- Dùng IAM role, Systems Manager Session Manager và GitHub OIDC thay cho access key dài hạn.
+- Tạo quy trình phát hành frontend có thể lặp lại và giữ artifact để rollback.
+- Kiểm tra callback URL và logout URL của Cognito với domain thật.
 
-*Thiết kế thành phần*
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.
+#### 2.3. Tiêu chí hoàn thành
 
-### 4. Triển khai kỹ thuật
-*Các giai đoạn triển khai*
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).
+- VPC, subnet, route, security group, EC2, EBS và Elastic IP hỗ trợ ứng dụng mà không cần NAT Gateway.
+- Nginx phục vụ frontend tĩnh qua HTTPS và chuyển tiếp request API đến backend .NET.
+- Có thể quản trị EC2 bằng Session Manager mà không mở port 22.
+- GitHub Actions xác thực qua OIDC, upload artifact và gọi triển khai qua SSM.
+- Nếu triển khai frontend lỗi, release trước vẫn còn để rollback.
+- Người dùng hoàn tất luồng đăng nhập Cognito và quay lại ứng dụng bằng callback URL đã cấu hình.
 
-*Yêu cầu kỹ thuật*
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.
+### 3. Vấn đề cần giải quyết
 
-### 5. Lộ trình & Mốc triển khai
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.
-- *Thực tập (Tháng 1–3)*:
-    - Tháng 1: Học AWS và nâng cấp phần cứng.
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.
+#### 3.1. Không thể chỉ phụ thuộc vào một đường triển khai
+
+Thiết kế ban đầu dự kiến dùng CDN để phân phối frontend. Khi CloudFront chưa dùng được trong môi trường làm việc, dự án cần một phương án thay thế thực tế nhưng vẫn phục vụ frontend an toàn và có thể vận hành bởi một nhóm nhỏ.
+
+#### 3.2. Hạ tầng cần có khả năng lặp lại
+
+Tạo tài nguyên thủ công hoàn toàn trên AWS Console khiến việc review và dựng lại môi trường khó khăn. Vì vậy dự án cần thư mục hạ tầng và runbook được ghi lại, đồng thời không commit account ID, ARN thật, secret hay giá trị phụ thuộc môi trường.
+
+#### 3.3. Quản trị server trực tiếp làm tăng rủi ro
+
+Mở SSH và lưu credential tĩnh tạo thêm bề mặt tấn công. Nền tảng sử dụng instance profile và Session Manager để quản trị, còn GitHub Actions dùng credential ngắn hạn qua OIDC để triển khai.
+
+#### 3.4. Release frontend cần có đường khôi phục
+
+Một lần deploy có thể lỗi trong khi hệ thống vẫn đang phục vụ người dùng. Mỗi release cần có định danh, được kiểm tra trước khi kích hoạt và được giữ cùng release trước đó để server có thể quay về phiên bản ổn định.
+
+### 4. Kiến trúc giải pháp
+
+AI Exam Maker chạy tại Region Singapore. Public subnet chứa EC2 chạy Nginx, frontend tĩnh, .NET API và AI worker. RDS PostgreSQL đặt trong private subnet. SQS tách rời các job AI, còn Cognito, Parameter Store, CloudWatch, SNS và Budgets hỗ trợ định danh, cấu hình, vận hành và kiểm soát chi phí.
+
+![Kiến trúc AWS của AI Exam Maker](/images/2-Proposal/project-architecture.jpg)
+
+#### 4.1. Các thành phần chính
+
+- **VPC và security group**: public subnet cho EC2, private subnet cho RDS, không dùng NAT Gateway và chỉ mở các rule cần thiết.
+- **EC2 và EBS**: máy ARM có Elastic IP, chạy Nginx, .NET API và worker bằng systemd.
+- **Domain và HTTPS**: domain ứng dụng trỏ đến điểm vào công khai; Nginx kết thúc HTTPS và chuyển tiếp traffic API.
+- **Amazon RDS for PostgreSQL**: chỉ security group của EC2 được phép kết nối đến database riêng tư.
+- **Amazon Cognito**: đăng nhập và các group role hỗ trợ teacher, head và admin.
+- **Amazon SQS và Amazon Bedrock**: API đưa job vào queue và worker xử lý bất đồng bộ.
+- **Amazon S3 và AWS Systems Manager**: S3 lưu gói release; SSM Run Command khởi chạy triển khai trên EC2.
+- **GitHub Actions và IAM OIDC**: workflow nhận credential tạm thời mà không lưu access key.
+- **CloudWatch, SNS và AWS Budgets**: log, alarm, thông báo và giới hạn chi phí cho môi trường trình diễn.
+
+#### 4.2. Luồng phân phối frontend
+
+GitHub Actions build và kiểm tra bản xuất tĩnh Next.js. Workflow đóng gói release kèm checksum rồi upload vào prefix S3 của dự án. Sau đó workflow gọi SSM. Script trên EC2 tải artifact, kiểm checksum, giải nén vào thư mục release mới, cập nhật symlink `current`, reload Nginx và giữ release trước để rollback. Khi CloudFront có thể sử dụng, thiết kế có thể quay lại CDN; luồng S3–SSM–EC2 là phương án fallback đang dùng.
+
+#### 4.3. Nguyên tắc bảo mật
+
+- Không cần inbound SSH; quản trị bằng Session Manager.
+- EC2 và RDS liên lạc bằng tham chiếu security group thay vì mở mạng rộng.
+- GitHub nhận credential role tạm thời qua OIDC.
+- Secret và định danh phụ thuộc môi trường nằm ngoài repository.
+- Backend là nơi quyết định cuối cùng về role, tổ bộ môn, quyền sở hữu và trạng thái nội dung.
+
+### 5. Lộ trình triển khai
+
+Việc triển khai bám theo roadmap của nhóm từ ngày 17/11 đến ngày 01/12/2026.
+
+- **Chốt nền**: thống nhất quyết định AWS, ghi lại phương án hạ tầng và chuẩn bị ranh giới repository.
+- **Dựng nền tảng**: tạo VPC, security group, EC2, EBS, Elastic IP, Session Manager, domain và HTTPS.
+- **Tự động hóa phát hành**: cấu hình OIDC, deploy role, luồng artifact S3, SSM Run Command và rollback frontend.
+- **Tích hợp và kiểm tra**: kiểm tra Cognito với nhóm frontend, kiểm tra health/deploy và chuẩn bị minh chứng cho demo.
 
 ### 6. Ước tính ngân sách
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).
 
-*Chi phí hạ tầng*
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).
+Kiến trúc được giữ gọn để dự án nằm trong khoản tín dụng phát triển 200 USD. Các khoản chính gồm thời gian chạy EC2, EBS, public IPv4, thời gian và dung lượng RDS, mức dùng model AI, log và truyền dữ liệu. S3, SQS, Cognito, Parameter Store, SNS và Systems Manager được giữ ở mức sử dụng thấp phù hợp với môi trường trình diễn.
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).
+Các biện pháp kiểm soát chi phí gồm dừng EC2 và RDS ngoài giờ làm việc, dùng model rẻ hơn trong giai đoạn phát triển, giới hạn số request và token AI, chỉ giữ log và artifact cần thiết, đồng thời bật cảnh báo AWS Budgets ở 50%, 80% và 100%.
 
-### 7. Đánh giá rủi ro
-*Ma trận rủi ro*
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.
+### 7. Đánh giá rủi ro và phương án giảm thiểu
 
-*Chiến lược giảm thiểu*
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.
+| Rủi ro | Ảnh hưởng | Phương án giảm thiểu |
+|---|---|---|
+| CloudFront chưa dùng được trong môi trường | Trung bình | Phục vụ frontend tĩnh bằng Nginx trên EC2, dùng S3 và SSM để phát hành. |
+| Deploy lỗi sau khi upload artifact | Cao | Kiểm checksum và health; giữ release trước để rollback. |
+| EC2 hoặc RDS không khả dụng | Cao | Dùng systemd restart, backup RDS, thử restore và ghi rõ trade-off của môi trường demo. |
+| Security group mở quá rộng | Cao | Đóng SSH, giới hạn RDS theo security group của EC2 và review port/prefix list cần dùng. |
+| Lộ credential AWS dài hạn | Cao | Dùng instance profile và GitHub OIDC với quyền tối thiểu. |
+| Chi phí AI vượt tín dụng | Cao | Giới hạn quota và token, bật budget alert, dừng tài nguyên ngoài giờ. |
+| Callback Cognito cấu hình sai | Trung bình | Kiểm tra end-to-end đăng nhập, callback, logout và truy cập API bảo vệ bằng domain thật. |
 
-*Kế hoạch dự phòng*
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.
+### 8. Kết luận và kết quả kỳ vọng
 
-### 8. Kết quả kỳ vọng
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+AI Exam Maker kết hợp việc soạn câu hỏi có hỗ trợ AI với quy trình rà soát, duyệt và phát hành đề có thể truy vết. Phần hạ tầng của em tạo ra con đường an toàn và có thể lặp lại từ một commit GitHub đến frontend đang chạy, đồng thời vẫn có phương án dự phòng khi CloudFront chưa dùng được. Kết quả kỳ vọng là môi trường AWS sẵn sàng cho demo với ranh giới mạng rõ ràng, HTTPS, quản trị bằng Session Manager, triển khai qua OIDC, log/alarm, rollback và kiểm soát chi phí.
+
+Về sau, kiến trúc có thể mở rộng thêm load balancer, database Multi-AZ, CDN, nhập tài liệu phong phú hơn và mức sẵn sàng cao hơn khi dự án chuyển khỏi phạm vi trình diễn.

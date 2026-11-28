@@ -1,112 +1,121 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-11-28
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# AI Exam Maker
+## A cost-aware AWS platform for AI-assisted exam authoring and approval
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
 
-### 2. Problem Statement
-### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+AI Exam Maker is a web application for Vietnamese high-school teachers. It helps teachers generate draft questions with generative AI, review them, assemble versioned exams, and export a student paper together with a separate answer document. The system is designed as a controlled demonstration environment on AWS, with asynchronous AI processing, department-level approval, auditability, and a target budget of USD 200.
 
-### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+My contribution focuses on the platform foundation and delivery path: deciding the AWS deployment approach, preparing the network and security boundaries, running the application on EC2, configuring the domain and HTTPS, establishing GitHub OIDC, and automating frontend deployment. I also worked with the frontend team to verify the real sign-in flow.
 
-### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+### 2. Project Goals
 
-### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+#### 2.1. General Objective
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+Build a working AWS-hosted exam platform in which a teacher can sign in, request AI-generated questions, review content, submit it for approval, assemble an exam version, and export the final documents through a controlled workflow.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+#### 2.2. Infrastructure Objectives
 
-### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- Choose a deployment design that fits the two-week delivery window and the USD 200 credit.
+- Keep the EC2 application reachable through HTTPS while avoiding inbound SSH.
+- Separate public compute from the private database network with security groups that allow only required traffic.
+- Use IAM roles, Systems Manager Session Manager, and GitHub OIDC instead of long-lived access keys.
+- Provide a repeatable frontend release process with an artifact retained for rollback.
+- Verify that Cognito callback and logout URLs work with the real domain.
 
-### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+#### 2.3. Completion Criteria
 
-### 4. Technical Implementation
-**Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+- The VPC, subnets, routing, security groups, EC2 instance, EBS volume, and Elastic IP support the application without a NAT Gateway.
+- Nginx serves the static frontend over HTTPS and forwards API requests to the .NET backend.
+- The EC2 instance can be administered through Session Manager without opening port 22.
+- GitHub Actions can authenticate through OIDC, upload a release artifact, and trigger deployment through SSM.
+- A failed frontend deployment leaves the previous release available for rollback.
+- A user can complete the Cognito sign-in flow and return to the application at the configured callback URL.
 
-**Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+### 3. Problem Statement
 
-### 5. Timeline & Milestones
-**Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+#### 3.1. A single deployment path is not enough
+
+The initial design considered a CDN-based frontend delivery path. When CloudFront was not available for the working environment, the project needed a practical fallback that could still serve the static frontend securely and be operated by a small team.
+
+#### 3.2. Infrastructure must be reproducible
+
+Manually creating resources in the AWS Console makes it difficult to review the configuration and repeat the setup. The project therefore needs an infrastructure folder and a documented runbook, without committing real account IDs, ARNs, secrets, or other environment-specific values.
+
+#### 3.3. Direct server administration increases risk
+
+Opening SSH and storing static credentials would create unnecessary exposure. The platform uses IAM instance profiles and Session Manager for administration, while GitHub Actions uses short-lived OIDC credentials for deployment.
+
+#### 3.4. Frontend releases need a safe recovery path
+
+A deployment can fail while the application is serving users. Each release must be identifiable, checked before activation, and kept alongside the previous release so the server can return to a known working version.
+
+### 4. Solution Architecture
+
+AI Exam Maker runs in the Singapore AWS Region. A public subnet contains the EC2 instance that runs Nginx, the static frontend, the .NET API, and the AI worker. RDS PostgreSQL remains in private subnets. SQS decouples AI jobs, while Cognito, Parameter Store, CloudWatch, SNS, and Budgets support identity, configuration, operations, and cost control.
+
+![AI Exam Maker AWS architecture](/images/2-Proposal/project-architecture.jpg)
+
+#### 4.1. Main Components
+
+- **VPC and security groups**: public subnet for EC2, private subnet for RDS, no NAT Gateway, and only required inbound rules.
+- **EC2 and EBS**: ARM-based compute with an Elastic IP, Nginx, the .NET API, and the worker managed by systemd.
+- **Domain and HTTPS**: the application domain points to the public entry point; Nginx terminates HTTPS and forwards API traffic.
+- **Amazon RDS for PostgreSQL**: private database access is limited to the EC2 security group.
+- **Amazon Cognito**: sign-in and role groups support the teacher, department head, and administrator flows.
+- **Amazon SQS and Amazon Bedrock**: the API queues generation jobs and the worker processes them asynchronously.
+- **Amazon S3 and AWS Systems Manager**: S3 stores release packages; SSM Run Command starts deployment on EC2.
+- **GitHub Actions and IAM OIDC**: the workflow obtains temporary AWS credentials without a stored access key.
+- **CloudWatch, SNS, and AWS Budgets**: logs, alarms, notifications, and spending limits support the demonstration environment.
+
+#### 4.2. Frontend Delivery Flow
+
+GitHub Actions builds and checks the static Next.js export. The workflow packages a release with a checksum and uploads it to an S3 prefix for the project. It then calls SSM. The EC2 deployment script downloads the artifact, verifies it, extracts a new release directory, updates the `current` symlink, reloads Nginx, and keeps the previous release available for rollback. When CloudFront can be used, the design can return to CDN delivery; the S3–SSM–EC2 path is the working fallback.
+
+#### 4.3. Security Principles
+
+- No inbound SSH is required; administration uses Session Manager.
+- EC2 and RDS communicate through security-group references rather than broad network access.
+- GitHub receives temporary role credentials through OIDC.
+- Secrets and environment-specific identifiers stay outside the repository.
+- Backend authorization remains the source of truth for roles, departments, ownership, and content state.
+
+### 5. Project Timeline
+
+The implementation follows the team roadmap from 17 November to 1 December 2026.
+
+- **Foundation**: confirm the AWS decisions, document the infrastructure approach, and prepare the repository boundaries.
+- **Platform setup**: create the VPC, security groups, EC2, EBS, Elastic IP, Session Manager access, domain, and HTTPS.
+- **Delivery automation**: configure OIDC, the deployment role, the S3 release path, SSM Run Command, and frontend rollback behavior.
+- **Integration and verification**: test Cognito sign-in with the frontend team, check health and deployment behavior, and prepare evidence for the demo.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+The architecture is intentionally compact so the project remains within the USD 200 development credit. The main cost drivers are EC2 hours, EBS storage, the public IPv4 address, RDS hours and storage, AI model usage, logs, and data transfer. S3, SQS, Cognito, Parameter Store, SNS, and Systems Manager are kept within the expected low-volume demonstration usage where possible.
 
-Total: $0.7/month, $8.40/12 months
+Cost-control measures include stopping EC2 and RDS outside working hours, using a cheaper model during development, limiting AI requests and tokens, retaining only the required logs and release artifacts, and configuring AWS Budgets alerts at 50%, 80%, and 100%.
 
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+### 7. Risk Assessment & Mitigation
 
-### 7. Risk Assessment
-#### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+| Risk | Impact | Mitigation |
+|---|---|---|
+| CloudFront is unavailable for the environment | Medium | Serve the static frontend through Nginx on EC2 and use S3 plus SSM for releases. |
+| A deployment fails after the artifact is uploaded | High | Verify the checksum and health result; keep the previous release and provide rollback. |
+| EC2 or RDS becomes unavailable | High | Use systemd restart behavior, RDS backups, a tested restore procedure, and documented trade-offs for the demo environment. |
+| A security group is too permissive | High | Close SSH, restrict RDS to the EC2 security group, and review the required ports and prefix lists. |
+| Long-lived AWS credentials leak | High | Use IAM instance profiles and GitHub OIDC with least-privilege policies. |
+| AI cost grows beyond the credit | High | Enforce quotas and token ceilings, use budget alerts, and stop nonessential resources outside working hours. |
+| Cognito callback configuration is incorrect | Medium | Test sign-in, callback, logout, and protected API access end to end with the real domain. |
 
-#### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+### 8. Conclusion & Expected Outcomes
 
-#### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+The proposed platform combines AI-assisted question generation with an accountable review and exam-publication workflow. My infrastructure work gives the team a secure and repeatable path from a GitHub commit to a running frontend, while preserving a fallback when CloudFront cannot be used. The expected result is a demo-ready AWS environment with clear network boundaries, HTTPS, Session Manager administration, OIDC-based deployment, observable services, and documented rollback and cost controls.
 
-### 8. Expected Outcomes
-#### Technical Improvements:
-Real-time data and analytics replace manual processes.
-Scalable to 10-15 stations.
-#### Long-term Value
-1-year data foundation for AI research.
-Reusable for future projects.
+The same structure can later be extended with a load balancer, Multi-AZ database, CDN, richer document import, and higher availability when the project moves beyond the demonstration stage.

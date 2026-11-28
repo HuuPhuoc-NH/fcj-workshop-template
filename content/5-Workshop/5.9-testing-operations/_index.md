@@ -1,5 +1,5 @@
 ---
-title: "5.9 Testing, observability, and rollback"
+title: "Testing, observability, and rollback"
 date: 2026-11-28
 weight: 9
 chapter: false
