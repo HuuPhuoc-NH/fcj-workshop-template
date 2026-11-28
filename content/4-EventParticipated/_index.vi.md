@@ -6,15 +6,15 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-Trong thời gian thực tập, em đã tham dự hai sự kiện của cộng đồng FCAJ tại Thành phố Hồ Chí Minh. Mỗi sự kiện giúp em tiếp cận thêm các chủ đề AWS, AI và Cloud thông qua những phần chia sẻ thực tế.
+Trong thời gian thực tập, em đã tham dự hai sự kiện cộng đồng về AWS, AI và Cloud tại Thành phố Hồ Chí Minh. Mỗi sự kiện giúp em tiếp cận thêm kiến thức thông qua những phần chia sẻ thực tế.
 
 ### [Event 1](4.1-Event1/)
 
 | Thông tin | Nội dung |
 | --- | --- |
-| Tên sự kiện | FCAJ Community Day |
+| Tên sự kiện | Fireside Chat with Dr. Werner Vogels: The Renaissance Developer & Building at Scale |
 | Thời gian | Ngày 02/10/2026 |
-| Địa điểm | Thành phố Hồ Chí Minh |
+| Địa điểm | Tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
 | Nội dung chính | AI, Cloud, CloudFront, Amazon QuickSight, LLM và hệ thống multi-agent |
 | Kết quả đạt được | Hiểu thêm cách kết hợp kiến thức AI với kiến trúc và dịch vụ AWS |
@@ -23,9 +23,9 @@ Trong thời gian thực tập, em đã tham dự hai sự kiện của cộng �
 
 | Thông tin | Nội dung |
 | --- | --- |
-| Tên sự kiện | FCAJ Community Day |
+| Tên sự kiện | First Cloud AI Journey Meetup: Xu Hướng & Thực Tiễn Triển Khai Cloud & AI Agent |
 | Thời gian | Ngày 24/10/2026 |
-| Địa điểm | Thành phố Hồ Chí Minh |
+| Địa điểm | Văn phòng AWS Việt Nam, tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
 | Nội dung chính | AI Agents, Voice AI, DevOps, Amazon Bedrock và Model Context Protocol |
 | Kết quả đạt được | Nắm được thêm các hướng ứng dụng AI vào vận hành và xây dựng hệ thống Cloud |

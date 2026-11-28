@@ -6,19 +6,19 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-## Bài thu hoạch sự kiện FCAJ Community Day
+## Bài thu hoạch sự kiện Fireside Chat with Dr. Werner Vogels
 
 ### Tổng quan sự kiện
 
-FCAJ Community Day là một hoạt động cộng đồng dành cho những người đang học tập và làm việc với AWS. Sự kiện tạo ra không gian để người tham dự trao đổi về AI, Cloud và các công nghệ hiện đại bằng những ví dụ gần với thực tế thay vì chỉ tập trung vào lý thuyết.
+Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành cho cộng đồng AWS, tập trung vào quy mô hệ thống, tư duy phát triển sản phẩm và vai trò của kỹ sư trong thời đại AI.
 
 ### Thông tin sự kiện
 
 | Thông tin | Chi tiết |
 | --- | --- |
-| Tên sự kiện | FCAJ Community Day |
-| Thời gian | Ngày 02/10/2026 |
-| Địa điểm | Thành phố Hồ Chí Minh |
+| Tên sự kiện | Fireside Chat with Dr. Werner Vogels: The Renaissance Developer & Building at Scale |
+| Thời gian | 09:00–10:30, ngày 02/10/2026 |
+| Địa điểm | Tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
 | Chủ đề | AI, Cloud, CloudFront, Amazon QuickSight, LLM và multi-agent |
 

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-## Bài thu hoạch sự kiện FCAJ Community Day
+## Bài thu hoạch sự kiện First Cloud AI Journey Meetup
 
 ### Tổng quan sự kiện
 
@@ -16,9 +16,9 @@ Event 2 tập trung vào cách AI đang được đưa vào sản phẩm, vận 
 
 | Thông tin | Chi tiết |
 | --- | --- |
-| Tên sự kiện | FCAJ Community Day |
-| Thời gian | Ngày 24/10/2026 |
-| Địa điểm | Thành phố Hồ Chí Minh |
+| Tên sự kiện | First Cloud AI Journey Meetup: Xu Hướng & Thực Tiễn Triển Khai Cloud & AI Agent |
+| Thời gian | 09:00–12:00, ngày 24/10/2026 |
+| Địa điểm | Văn phòng AWS Việt Nam, tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
 | Chủ đề | AI Agents, Voice AI, DevOps, Amazon Bedrock và MCP |
 

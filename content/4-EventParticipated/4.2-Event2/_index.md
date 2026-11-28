@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-## FCAJ Community Day Reflection
+## First Cloud AI Journey Meetup Reflection
 
 ### Event overview
 
@@ -16,9 +16,9 @@ Event 2 focused on bringing AI into products, cloud operations, and enterprise d
 
 | Information | Details |
 | --- | --- |
-| Event name | FCAJ Community Day |
-| Date | October 24, 2026 |
-| Location | Ho Chi Minh City, Vietnam |
+| Event name | First Cloud AI Journey Meetup: Trends & Real-world Practices in Cloud & AI Agent Deployment |
+| Date | 09:00–12:00, October 24, 2026 |
+| Location | AWS Vietnam Office, 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City |
 | Role | Attendee |
 | Topics | AI Agents, Voice AI, DevOps, Amazon Bedrock, and MCP |
 
