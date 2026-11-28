@@ -60,3 +60,15 @@ The lessons about P99.9, resilience, and user-oriented engineering can be applie
 ### Practical application to my internship and AWS project
 
 I appreciated the combination of practical experience and lessons that can be applied directly to system building. The event encouraged me to study cloud architecture more deeply and develop an engineering mindset that covers the full product lifecycle.
+
+### Event photo highlights and attendance proof
+
+<figure style="text-align: center;">
+<img src="/images/events/event1-01.jpg" alt="Attendance at the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<figcaption>Figure 1: Attendance at the Fireside Chat with Dr. Werner Vogels.</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/images/events/event1-02.jpg" alt="Attendance proof for the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<figcaption>Figure 2: Attendance proof at the AWS office.</figcaption>
+</figure>

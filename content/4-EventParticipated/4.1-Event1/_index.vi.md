@@ -60,3 +60,15 @@ Các bài học về P99.9, khả năng phục hồi và tư duy hướng ngư�
 ### Ứng dụng thực tế vào quá trình thực tập và dự án AWS
 
 Em đánh giá cao cách sự kiện kết hợp giữa kinh nghiệm thực tế và những bài học có thể áp dụng ngay vào quá trình xây dựng hệ thống. Phần chia sẻ giúp em có thêm động lực học sâu hơn về kiến trúc Cloud và rèn luyện tư duy của một kỹ sư chịu trách nhiệm cho toàn bộ vòng đời sản phẩm.
+
+### Hình ảnh thực tế và minh chứng tham gia sự kiện
+
+<figure style="text-align: center;">
+<img src="/images/events/event1-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<figcaption>Hình 1: Hình ảnh tham gia Fireside Chat with Dr. Werner Vogels.</figcaption>
+</figure>
+
+<figure style="text-align: center;">
+<img src="/images/events/event1-02.jpg" alt="Minh chứng tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<figcaption>Hình 2: Minh chứng tham gia sự kiện tại văn phòng AWS.</figcaption>
+</figure>
