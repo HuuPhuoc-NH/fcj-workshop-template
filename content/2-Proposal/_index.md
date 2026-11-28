@@ -7,115 +7,215 @@ pre: " <b> 2. </b> "
 ---
 
 # AI Exam Maker
-## A cost-aware AWS platform for AI-assisted exam authoring and approval
+## Cost-Optimized AWS Architecture for AI-Assisted Question Generation and Exam Approval
 
 ### 1. Executive Summary
 
-AI Exam Maker is a web application for Vietnamese high-school teachers. It helps teachers generate draft questions with generative AI, review them, assemble versioned exams, and export a student paper together with a separate answer document. The system is designed as a controlled demonstration environment on AWS, with asynchronous AI processing, department-level approval, auditability, and a target budget of USD 200.
+AI Exam Maker is a web application that supports Vietnamese high-school teachers during the exam preparation process. A teacher selects a subject, grade, chapter, question type, difficulty, and an optional note. The application sends the request to an asynchronous AI pipeline, validates the generated result, and saves the questions as drafts. The teacher must review the content before it can enter the department approval workflow. Approved questions can then be reused to assemble versioned exams, publish an official version, and export a student paper and a separate answer document.
 
-My contribution focuses on the platform foundation and delivery path: deciding the AWS deployment approach, preparing the network and security boundaries, running the application on EC2, configuring the domain and HTTPS, establishing GitHub OIDC, and automating frontend deployment. I also worked with the frontend team to verify the real sign-in flow.
+The project is designed as a focused AWS demonstration environment. It prioritizes a complete and accountable workflow over production-scale availability. The target is to keep the development and demonstration environment within a USD 200 credit while still demonstrating authentication, authorization, asynchronous processing, deployment automation, monitoring, rollback, and cost control.
+
+My work covers the OPS-1 infrastructure scope. It includes the AWS decisions, the infrastructure runbook and IaC boundary, VPC and security groups, EC2 and EBS, Elastic IP, Session Manager, domain and HTTPS, the CloudFront design and its S3–SSM–EC2 fallback, GitHub OIDC, frontend CI/CD, and the end-to-end sign-in integration with the frontend team.
 
 ### 2. Project Goals
 
 #### 2.1. General Objective
 
-Build a working AWS-hosted exam platform in which a teacher can sign in, request AI-generated questions, review content, submit it for approval, assemble an exam version, and export the final documents through a controlled workflow.
+Build a working exam platform on AWS that allows a teacher to sign in, generate question drafts with AI, review and submit them, receive department-level approval, assemble an exam version, publish the approved version, and export the final documents.
 
-#### 2.2. Infrastructure Objectives
+#### 2.2. Functional Scope
 
-- Choose a deployment design that fits the two-week delivery window and the USD 200 credit.
-- Keep the EC2 application reachable through HTTPS while avoiding inbound SSH.
-- Separate public compute from the private database network with security groups that allow only required traffic.
-- Use IAM roles, Systems Manager Session Manager, and GitHub OIDC instead of long-lived access keys.
-- Provide a repeatable frontend release process with an artifact retained for rollback.
-- Verify that Cognito callback and logout URLs work with the real domain.
+- Sign in through Amazon Cognito using Authorization Code with PKCE.
+- Support three roles: teacher, department head, and administrator.
+- Generate question drafts by subject, grade, chapter, question type, and cognitive level.
+- Process AI requests through Amazon SQS and a dedicated worker instead of blocking the browser.
+- Validate the AI response, track job status, and require teacher review before approval.
+- Maintain a reusable question bank with states such as Draft, Submitted, Approved, Rejected, and Archived.
+- Assemble exams as immutable versions with snapshots and a content hash when submitted.
+- Allow a department head to review content created by another member of the department.
+- Publish at most one official version of an exam at a time.
+- Export a student paper without answers and a separately protected answer document.
+- Record state changes and provide operational logs and cost information.
 
-#### 2.3. Completion Criteria
+#### 2.3. Infrastructure Objectives
 
-- The VPC, subnets, routing, security groups, EC2 instance, EBS volume, and Elastic IP support the application without a NAT Gateway.
-- Nginx serves the static frontend over HTTPS and forwards API requests to the .NET backend.
-- The EC2 instance can be administered through Session Manager without opening port 22.
-- GitHub Actions can authenticate through OIDC, upload a release artifact, and trigger deployment through SSM.
-- A failed frontend deployment leaves the previous release available for rollback.
-- A user can complete the Cognito sign-in flow and return to the application at the configured callback URL.
+- Keep the public entry point on HTTPS and avoid inbound SSH.
+- Place EC2 in a public subnet and RDS in private subnets, without a NAT Gateway.
+- Restrict database access to the EC2 security group and keep the security group rules reviewable.
+- Use an EC2 instance profile and Systems Manager Session Manager for administration.
+- Use GitHub OIDC and short-lived role credentials instead of long-lived AWS access keys.
+- Build a repeatable frontend release path with checksums, health checks, and rollback.
+- Test the Cognito callback, logout, protected API, and frontend behavior on the configured domain.
+
+#### 2.4. Completion Criteria
+
+| Area | Completion target |
+|---|---|
+| Network | Public EC2 subnet, private RDS subnet, controlled routes, and no unnecessary NAT cost. |
+| Security | Port 22 remains closed; RDS accepts traffic only from EC2; IAM permissions are least privilege. |
+| Compute | EC2, EBS, Elastic IP, Nginx, API, and worker are available and manageable through SSM. |
+| Delivery | GitHub Actions builds the frontend, uploads a release, invokes SSM, checks health, and preserves a rollback target. |
+| Identity | Cognito sign-in returns to the correct callback URL and the API accepts only valid access tokens. |
+| Operations | Logs, health checks, alarms, budget notifications, and cleanup instructions are documented. |
 
 ### 3. Problem Statement
 
-#### 3.1. A single deployment path is not enough
+#### 3.1. Manual exam preparation is slow and difficult to reuse
 
-The initial design considered a CDN-based frontend delivery path. When CloudFront was not available for the working environment, the project needed a practical fallback that could still serve the static frontend securely and be operated by a small team.
+Teachers often write questions repeatedly for different classes and exams. Separate documents also make it difficult to know which questions were reviewed, approved, or already used. AI Exam Maker provides structured generation and a searchable question bank, but the generated output remains a draft until a human reviews it.
 
-#### 3.2. Infrastructure must be reproducible
+#### 3.2. AI output cannot be trusted without controls
 
-Manually creating resources in the AWS Console makes it difficult to review the configuration and repeat the setup. The project therefore needs an infrastructure folder and a documented runbook, without committing real account IDs, ARNs, secrets, or other environment-specific values.
+A language model may produce an invalid structure, a duplicate question, or an answer that does not match the explanation. The application therefore treats AI output as untrusted data. It validates the response, records the job result, applies duplicate checks, and uses a teacher and department-head review process before publication.
 
-#### 3.3. Direct server administration increases risk
+#### 3.3. Long-running generation should not block the user interface
 
-Opening SSH and storing static credentials would create unnecessary exposure. The platform uses IAM instance profiles and Session Manager for administration, while GitHub Actions uses short-lived OIDC credentials for deployment.
+AI calls can take several seconds and can fail temporarily. The API creates a job and places it on SQS. A worker claims the job, calls Bedrock, persists the result, and reports a terminal status. Retries, a dead-letter queue, leases, and recovery logic reduce the chance of lost or duplicated work.
 
-#### 3.4. Frontend releases need a safe recovery path
+#### 3.4. CloudFront was not available for the working deployment path
 
-A deployment can fail while the application is serving users. Each release must be identifiable, checked before activation, and kept alongside the previous release so the server can return to a known working version.
+The original frontend design used S3 with CloudFront behaviors and a CloudFront Function. Because CloudFront could not be used in the current environment, the project needs a fallback that does not require a CDN to serve the static export. The fallback stores versioned artifacts in S3 and uses SSM to let EC2 download and activate them.
+
+#### 3.5. Infrastructure access must be secure and repeatable
+
+Opening SSH or putting permanent credentials in GitHub Actions would make the system harder to secure and review. The deployment design uses an EC2 instance profile, Session Manager, IAM least privilege, and GitHub OIDC. Environment-specific values remain outside the repository.
 
 ### 4. Solution Architecture
 
-AI Exam Maker runs in the Singapore AWS Region. A public subnet contains the EC2 instance that runs Nginx, the static frontend, the .NET API, and the AI worker. RDS PostgreSQL remains in private subnets. SQS decouples AI jobs, while Cognito, Parameter Store, CloudWatch, SNS, and Budgets support identity, configuration, operations, and cost control.
+AI Exam Maker runs in the `ap-southeast-1` Singapore Region. The architecture intentionally uses one EC2 instance and a Single-AZ RDS database for the demonstration to reduce cost and operational complexity. This is an accepted trade-off and not a claim of production-level high availability.
 
 ![AI Exam Maker AWS architecture](/fcj-workshop-template/images/2-Proposal/project-architecture.jpg)
 
-#### 4.1. Main Components
+#### 4.1. Component Responsibilities
 
-- **VPC and security groups**: public subnet for EC2, private subnet for RDS, no NAT Gateway, and only required inbound rules.
-- **EC2 and EBS**: ARM-based compute with an Elastic IP, Nginx, the .NET API, and the worker managed by systemd.
-- **Domain and HTTPS**: the application domain points to the public entry point; Nginx terminates HTTPS and forwards API traffic.
-- **Amazon RDS for PostgreSQL**: private database access is limited to the EC2 security group.
-- **Amazon Cognito**: sign-in and role groups support the teacher, department head, and administrator flows.
-- **Amazon SQS and Amazon Bedrock**: the API queues generation jobs and the worker processes them asynchronously.
-- **Amazon S3 and AWS Systems Manager**: S3 stores release packages; SSM Run Command starts deployment on EC2.
-- **GitHub Actions and IAM OIDC**: the workflow obtains temporary AWS credentials without a stored access key.
-- **CloudWatch, SNS, and AWS Budgets**: logs, alarms, notifications, and spending limits support the demonstration environment.
+| Component | Responsibility |
+|---|---|
+| VPC, subnets, and Internet Gateway | Separate public compute from private database resources and provide the required network path. |
+| Security groups | Allow HTTPS and certificate-validation traffic to EC2, and allow PostgreSQL only from EC2 to RDS. |
+| EC2, EBS, and Elastic IP | Run Nginx, the static frontend, the .NET API, and the AI worker under systemd. |
+| Nginx and domain | Terminate HTTPS, serve the active frontend release, and forward `/api/*` to the API. |
+| Amazon RDS for PostgreSQL | Store users, departments, questions, jobs, exams, versions, and audit records in private subnets. |
+| Amazon Cognito | Authenticate users and provide the teacher, head, and admin groups. |
+| Amazon SQS and DLQ | Decouple generation requests from the worker and retain messages that repeatedly fail. |
+| Amazon Bedrock | Generate draft questions and optionally verify answers according to the application workflow. |
+| SSM Parameter Store and KMS | Provide configuration and encrypted values without committing them to Git. |
+| Amazon S3 | Store frontend release packages and checksums for deployment and rollback. |
+| GitHub Actions and OIDC | Build, test, package, and deploy without long-lived AWS credentials. |
+| CloudWatch, SNS, and Budgets | Collect logs, notify on important alarms, and monitor spending. |
 
-#### 4.2. Frontend Delivery Flow
+#### 4.2. Network and Security Design
 
-GitHub Actions builds and checks the static Next.js export. The workflow packages a release with a checksum and uploads it to an S3 prefix for the project. It then calls SSM. The EC2 deployment script downloads the artifact, verifies it, extracts a new release directory, updates the `current` symlink, reloads Nginx, and keeps the previous release available for rollback. When CloudFront can be used, the design can return to CDN delivery; the S3–SSM–EC2 path is the working fallback.
+The VPC has a public subnet for EC2 and private subnets for RDS. The design does not use a NAT Gateway because the demonstration does not need the additional fixed cost. EC2 receives only the traffic required for HTTPS and certificate validation. Port 22 is not opened. RDS accepts PostgreSQL connections only from the EC2 security group, rather than from a public CIDR range.
 
-#### 4.3. Security Principles
+The EC2 instance receives permissions through an instance profile. Session Manager is used for administrative access and command execution. GitHub Actions assumes a deployment role through the GitHub OIDC provider. The role is restricted by repository, branch, and workflow conditions supported by IAM, and it receives only the S3 and SSM permissions required by the deployment.
 
-- No inbound SSH is required; administration uses Session Manager.
-- EC2 and RDS communicate through security-group references rather than broad network access.
-- GitHub receives temporary role credentials through OIDC.
-- Secrets and environment-specific identifiers stay outside the repository.
-- Backend authorization remains the source of truth for roles, departments, ownership, and content state.
+#### 4.3. Frontend Delivery and CloudFront Fallback
 
-### 5. Project Timeline
+The intended CDN path uses S3 as the frontend origin and CloudFront behaviors for static assets and API requests. If the CDN cannot be used, the working path is:
 
-The implementation follows the team roadmap from 17 November to 1 December 2026.
+1. GitHub Actions installs dependencies, builds the static Next.js export, and runs CI checks.
+2. The workflow packages the output as a versioned release and creates a SHA-256 checksum.
+3. The artifact and checksum are uploaded under an S3 release prefix.
+4. The workflow calls SSM Run Command on the target EC2 instance.
+5. EC2 downloads the artifact, verifies the checksum, and extracts it into a new release directory.
+6. The script updates the `current` symlink only after the new release is ready.
+7. Nginx is reloaded and the public health or asset check is performed.
+8. The previous release remains available so a failed activation can be rolled back.
 
-- **Foundation**: confirm the AWS decisions, document the infrastructure approach, and prepare the repository boundaries.
-- **Platform setup**: create the VPC, security groups, EC2, EBS, Elastic IP, Session Manager access, domain, and HTTPS.
-- **Delivery automation**: configure OIDC, the deployment role, the S3 release path, SSM Run Command, and frontend rollback behavior.
-- **Integration and verification**: test Cognito sign-in with the frontend team, check health and deployment behavior, and prepare evidence for the demo.
+This approach keeps the deployment auditable: the GitHub run, S3 artifact, SSM invocation, EC2 release directory, and active symlink can be inspected separately.
 
-### 6. Budget Estimation
+#### 4.4. Authentication Flow
 
-The architecture is intentionally compact so the project remains within the USD 200 development credit. The main cost drivers are EC2 hours, EBS storage, the public IPv4 address, RDS hours and storage, AI model usage, logs, and data transfer. S3, SQS, Cognito, Parameter Store, SNS, and Systems Manager are kept within the expected low-volume demonstration usage where possible.
+The user opens the application over HTTPS and selects sign-in. Cognito authenticates the user and returns an authorization code to the configured callback URL. The frontend exchanges the code using PKCE, stores the session according to the application design, and calls the API with an access token. The backend validates issuer, audience, expiry, and the internal user record before returning protected data. Logout clears the local session and returns the user to the configured sign-out path.
 
-Cost-control measures include stopping EC2 and RDS outside working hours, using a cheaper model during development, limiting AI requests and tokens, retaining only the required logs and release artifacts, and configuring AWS Budgets alerts at 50%, 80%, and 100%.
+#### 4.5. AI Job Flow
 
-### 7. Risk Assessment & Mitigation
+The API validates the request and checks the user’s role, department, quota, and selected catalog values. It creates a job and sends a message to SQS. The worker claims the job, checks the token budget before each model call, invokes Bedrock, validates and sanitizes the response, removes duplicates when required, and saves the draft question result. The frontend polls the job status and displays a recoverable error if the worker has not completed. Repeated messages must not create duplicate questions.
 
-| Risk | Impact | Mitigation |
+### 5. Technical Implementation Plan
+
+#### Phase 0 — AWS decisions and infrastructure boundary
+
+- Confirm the region, domain approach, EC2 family, model and quota assumptions, IaC/runbook boundary, and fallback strategy.
+- Place infrastructure examples and scripts under `/infra` without real IDs, ARNs, secrets, or account-specific values.
+- Define the review points for VPC rules, IAM permissions, deployment artifacts, and cleanup.
+
+#### Phase 1 — Network, compute, and HTTPS
+
+- Create the VPC, public and private subnets, route tables, Internet Gateway, and security groups.
+- Prepare EC2, EBS, Elastic IP, instance profile, SSM Agent access, and systemd service boundaries.
+- Configure the application domain, Nginx reverse proxy, HTTPS certificate, renewal timer, and origin-header checks where applicable.
+- Confirm that the backend can reach RDS privately and that unwanted inbound paths remain closed.
+
+#### Phase 2 — Identity and deployment automation
+
+- Configure the GitHub OIDC provider and deployment IAM role with the smallest practical S3 and SSM permissions.
+- Build the frontend workflow and package each release with a checksum.
+- Upload artifacts to S3 and trigger the EC2 deployment through SSM instead of SSH.
+- Extract to a new release, update `current`, reload Nginx, check the result, and retain a previous release for rollback.
+
+#### Phase 3 — Integration and evidence
+
+- Test Cognito sign-in, callback, logout, protected API access, and the frontend behavior with the real domain.
+- Test successful and unsuccessful deployment paths, including checksum failure and rollback.
+- Capture non-sensitive evidence from VPC, EC2, SSM, IAM, S3, GitHub Actions, and the application health check.
+- Review cost controls, logs, alarms, and cleanup steps before the team demo.
+
+### 6. Project Timeline and Milestones
+
+The team roadmap runs from 17 November to 1 December 2026. Work is parallelized so the application team can develop while infrastructure is prepared.
+
+| Period | Focus | Infrastructure deliverables |
 |---|---|---|
-| CloudFront is unavailable for the environment | Medium | Serve the static frontend through Nginx on EC2 and use S3 plus SSM for releases. |
-| A deployment fails after the artifact is uploaded | High | Verify the checksum and health result; keep the previous release and provide rollback. |
-| EC2 or RDS becomes unavailable | High | Use systemd restart behavior, RDS backups, a tested restore procedure, and documented trade-offs for the demo environment. |
-| A security group is too permissive | High | Close SSH, restrict RDS to the EC2 security group, and review the required ports and prefix lists. |
-| Long-lived AWS credentials leak | High | Use IAM instance profiles and GitHub OIDC with least-privilege policies. |
-| AI cost grows beyond the credit | High | Enforce quotas and token ceilings, use budget alerts, and stop nonessential resources outside working hours. |
-| Cognito callback configuration is incorrect | Medium | Test sign-in, callback, logout, and protected API access end to end with the real domain. |
+| 17–19 Nov | Foundation | AWS decisions, infrastructure runbook, repository rules, and initial CI boundary. |
+| 20–24 Nov | Platform | VPC, security groups, EC2, EBS, Elastic IP, Session Manager, domain, Nginx, HTTPS. |
+| 25–29 Nov | Features and delivery | OIDC role, S3 release path, SSM deployment, frontend rollback, and sign-in integration. |
+| 30 Nov–1 Dec | Finalization | End-to-end checks, recovery evidence, budget review, cleanup, and demo preparation. |
 
-### 8. Conclusion & Expected Outcomes
+The main demo flow is protected from optional scope. If time is short, additional availability improvements and nonessential automation are deferred rather than weakening the network, authentication, or rollback controls.
 
-The proposed platform combines AI-assisted question generation with an accountable review and exam-publication workflow. My infrastructure work gives the team a secure and repeatable path from a GitHub commit to a running frontend, while preserving a fallback when CloudFront cannot be used. The expected result is a demo-ready AWS environment with clear network boundaries, HTTPS, Session Manager administration, OIDC-based deployment, observable services, and documented rollback and cost controls.
+### 7. Budget Estimation and Cost Control
 
-The same structure can later be extended with a load balancer, Multi-AZ database, CDN, richer document import, and higher availability when the project moves beyond the demonstration stage.
+The estimate covers the development and demonstration period in `ap-southeast-1`. Actual charges depend on runtime hours, storage, traffic, AI tokens, and the current AWS price list, so the numbers are planning values rather than a bill guarantee.
+
+| Cost area | Planning assumption | Control measure |
+|---|---|---|
+| EC2 and public IPv4 | Small ARM instance and Elastic IP used only during working hours. | Stop the instance outside the schedule and release unused IPs after the demo. |
+| EBS | One small general-purpose volume for application releases and logs. | Remove unattached volumes and keep only required release history. |
+| RDS | Small Single-AZ PostgreSQL instance with encrypted storage and short backups. | Stop outside working hours, monitor storage, and remove temporary snapshots after review. |
+| S3 | A small number of frontend release packages and checksums. | Use a release prefix and lifecycle cleanup for old artifacts. |
+| AI services | Development uses a lower-cost model and the demo uses limited requests. | Enforce per-user/system quotas and token ceilings before model calls. |
+| Logs and alarms | Seven-day log retention and a small set of high-value alarms. | Avoid verbose payload logging and keep the alarm count controlled. |
+
+AWS Budgets alerts are configured at 50%, 80%, and 100% of the USD 200 credit. The application also limits questions per request and daily generation requests. Together, infrastructure schedules and application-level quotas reduce the risk that a test or repeated job consumes the entire budget.
+
+### 8. Risk Assessment and Mitigation
+
+| Risk | Impact | Probability | Mitigation and contingency |
+|---|---|---|---|
+| AI generates an incorrect answer | High | Medium | Keep output as draft, validate structure, allow independent verification, and require human approval. |
+| Duplicate SQS delivery or worker crash | Medium | Medium | Use idempotent job claims, unique constraints, leases, heartbeat, retry, and a DLQ. |
+| Unauthorized access to drafts or answers | Critical | Low | Enforce backend authorization using role, department, ownership, and content state; test the permission matrix. |
+| CloudFront cannot be used | Medium | High | Use the S3–SSM–EC2 fallback and serve the static frontend from Nginx over HTTPS. |
+| Release is corrupted or deployment fails | High | Medium | Verify SHA-256, run health checks, activate through `current`, and keep the previous release for rollback. |
+| EC2 or Single-AZ RDS fails | High | Low | Accept the demo trade-off, use systemd restart and RDS backups, and test a restore procedure. |
+| EC2 is exposed to scanning | Medium | Medium | Allow only 443 and necessary certificate-validation traffic; keep SSH closed and use Session Manager. |
+| GitHub credential is leaked | Critical | Low | Use OIDC short-lived credentials, repository/branch restrictions, least privilege, and secret scanning. |
+| Cognito callback is incorrect | Medium | Medium | Test login, callback, logout, and protected API access from the deployed frontend. |
+| Two-week schedule slips | High | Medium | Work in parallel, prioritize the main demo, and defer optional production-scale features. |
+
+### 9. Expected Deliverables
+
+- A documented AWS architecture and infrastructure decision record.
+- VPC, subnet, route, security-group, EC2, EBS, Elastic IP, Nginx, HTTPS, and Session Manager configuration.
+- GitHub OIDC provider and least-privilege deployment role.
+- Frontend CI/CD workflow, S3 release artifacts, SSM deployment script, health check, and rollback path.
+- End-to-end Cognito sign-in integration with the frontend team.
+- Non-sensitive screenshots and runbook evidence for the worklog and final demonstration.
+- Cleanup instructions covering snapshots, EBS volumes, Elastic IP, S3 artifacts, and stopped resources.
+
+### 10. Conclusion and Future Development
+
+AI Exam Maker combines AI-assisted question drafting with a reviewable and auditable exam workflow. The infrastructure design balances security, cost, and delivery speed: the database is private, administration uses Session Manager, GitHub uses OIDC, and frontend releases can be verified and rolled back. The CloudFront fallback keeps the project demonstrable even when the original CDN path is unavailable.
+
+The next evolution could add a load balancer, Multi-AZ database, CDN and WAF, stronger infrastructure-as-code coverage, document-based question generation, exam blueprints, multiple exam variants, and DOCX export. Those improvements can be introduced after the core demonstration is stable and the budget assumptions are rechecked.

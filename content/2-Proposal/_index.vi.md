@@ -7,115 +7,215 @@ pre: " <b> 2. </b> "
 ---
 
 # AI Exam Maker
-## Nền tảng AWS tối ưu chi phí cho việc soạn và duyệt đề thi có hỗ trợ AI
+## Kiến trúc AWS tối ưu chi phí cho việc tạo và duyệt câu hỏi có hỗ trợ AI
 
 ### 1. Tóm tắt điều hành
 
-AI Exam Maker là ứng dụng web dành cho giáo viên trung học phổ thông Việt Nam. Ứng dụng hỗ trợ tạo câu hỏi nháp bằng AI, rà soát câu hỏi, ghép thành các phiên bản đề và xuất đề học sinh cùng đáp án riêng. Hệ thống được thiết kế như một môi trường trình diễn có kiểm soát trên AWS, với xử lý AI bất đồng bộ, quy trình duyệt theo tổ bộ môn, khả năng truy vết và mục tiêu nằm trong khoản tín dụng 200 USD.
+AI Exam Maker là ứng dụng web hỗ trợ giáo viên trung học phổ thông Việt Nam trong quá trình chuẩn bị đề thi. Giáo viên chọn môn, khối, chương, dạng câu hỏi, mức độ nhận thức và có thể thêm ghi chú ngắn. Ứng dụng gửi yêu cầu đến pipeline AI bất đồng bộ, kiểm tra kết quả sinh ra và lưu câu hỏi ở trạng thái nháp. Giáo viên phải rà soát nội dung trước khi câu hỏi đi vào quy trình duyệt theo tổ bộ môn. Các câu hỏi đã được duyệt có thể tái sử dụng để ghép thành phiên bản đề, xuất bản phiên bản chính thức và xuất đề học sinh cùng một tài liệu đáp án riêng.
 
-Phần đóng góp của em tập trung vào nền tảng và con đường triển khai: chốt phương án AWS, chuẩn bị ranh giới mạng và bảo mật, vận hành ứng dụng trên EC2, cấu hình domain và HTTPS, thiết lập GitHub OIDC, tự động triển khai frontend. Em cũng phối hợp với nhóm frontend để kiểm tra luồng đăng nhập thật.
+Dự án được thiết kế như một môi trường trình diễn AWS có phạm vi rõ ràng. Mục tiêu là chứng minh được quy trình hoàn chỉnh và có thể truy vết thay vì đạt mức sẵn sàng production. Nhóm đặt mục tiêu giữ môi trường phát triển và demo trong khoản tín dụng 200 USD, đồng thời thể hiện được xác thực, phân quyền, xử lý bất đồng bộ, tự động triển khai, monitoring, rollback và kiểm soát chi phí.
+
+Phần việc của em thuộc phạm vi hạ tầng OPS-1. Nội dung gồm chốt các quyết định AWS, xây dựng ranh giới IaC và runbook, VPC và security group, EC2 và EBS, Elastic IP, Session Manager, domain và HTTPS, thiết kế CloudFront cùng phương án fallback S3–SSM–EC2, GitHub OIDC, CI/CD frontend và phối hợp với nhóm frontend kiểm tra luồng đăng nhập end-to-end.
 
 ### 2. Mục tiêu dự án
 
 #### 2.1. Mục tiêu chung
 
-Xây dựng một nền tảng đề thi chạy được trên AWS, trong đó giáo viên có thể đăng nhập, yêu cầu AI tạo câu hỏi, rà soát nội dung, gửi duyệt, ghép phiên bản đề và xuất tài liệu cuối theo quy trình có kiểm soát.
+Xây dựng một nền tảng đề thi chạy được trên AWS, cho phép giáo viên đăng nhập, tạo câu hỏi nháp bằng AI, rà soát và gửi duyệt, nhận phê duyệt theo tổ bộ môn, ghép phiên bản đề, xuất bản phiên bản được duyệt và xuất các tài liệu cuối.
 
-#### 2.2. Mục tiêu hạ tầng
+#### 2.2. Phạm vi chức năng
 
-- Chọn phương án triển khai phù hợp với thời gian hai tuần và khoản tín dụng 200 USD.
-- Giữ EC2 có thể phục vụ qua HTTPS nhưng không cần mở SSH từ Internet.
-- Tách compute công khai khỏi database riêng tư bằng các security group chỉ cho phép lưu lượng cần thiết.
-- Dùng IAM role, Systems Manager Session Manager và GitHub OIDC thay cho access key dài hạn.
-- Tạo quy trình phát hành frontend có thể lặp lại và giữ artifact để rollback.
-- Kiểm tra callback URL và logout URL của Cognito với domain thật.
+- Đăng nhập qua Amazon Cognito bằng Authorization Code với PKCE.
+- Hỗ trợ ba vai trò: teacher, department head và administrator.
+- Tạo câu hỏi nháp theo môn, khối, chương, dạng câu hỏi và mức độ nhận thức.
+- Xử lý yêu cầu AI qua Amazon SQS và worker riêng thay vì chặn giao diện người dùng.
+- Kiểm tra kết quả AI, theo dõi trạng thái job và yêu cầu giáo viên review trước khi duyệt.
+- Duy trì question bank với các trạng thái Draft, Submitted, Approved, Rejected và Archived.
+- Ghép đề dưới dạng các phiên bản bất biến, tạo snapshot và content hash khi submit.
+- Cho phép trưởng bộ môn duyệt nội dung do thành viên khác trong cùng tổ tạo ra.
+- Mỗi đề chỉ có tối đa một phiên bản chính thức được publish tại một thời điểm.
+- Xuất đề học sinh không chứa đáp án và xuất tài liệu đáp án bằng endpoint được bảo vệ riêng.
+- Ghi audit cho các thay đổi trạng thái và cung cấp log vận hành cùng thông tin sử dụng AI/chi phí.
 
-#### 2.3. Tiêu chí hoàn thành
+#### 2.3. Mục tiêu hạ tầng
 
-- VPC, subnet, route, security group, EC2, EBS và Elastic IP hỗ trợ ứng dụng mà không cần NAT Gateway.
-- Nginx phục vụ frontend tĩnh qua HTTPS và chuyển tiếp request API đến backend .NET.
-- Có thể quản trị EC2 bằng Session Manager mà không mở port 22.
-- GitHub Actions xác thực qua OIDC, upload artifact và gọi triển khai qua SSM.
-- Nếu triển khai frontend lỗi, release trước vẫn còn để rollback.
-- Người dùng hoàn tất luồng đăng nhập Cognito và quay lại ứng dụng bằng callback URL đã cấu hình.
+- Giữ điểm truy cập công khai trên HTTPS và không cần inbound SSH.
+- Đặt EC2 trong public subnet, RDS trong private subnet và không dùng NAT Gateway.
+- Giới hạn quyền truy cập database chỉ từ security group của EC2.
+- Dùng EC2 instance profile và Systems Manager Session Manager để quản trị.
+- Dùng GitHub OIDC và credential ngắn hạn thay cho AWS access key dài hạn.
+- Xây dựng quy trình release frontend có thể lặp lại, có checksum, health check và rollback.
+- Kiểm tra callback, logout, protected API và giao diện frontend trên domain đã cấu hình.
+
+#### 2.4. Tiêu chí hoàn thành
+
+| Hạng mục | Mục tiêu hoàn thành |
+|---|---|
+| Network | Có public subnet cho EC2, private subnet cho RDS, route được kiểm soát và không phát sinh NAT cost không cần thiết. |
+| Security | Port 22 vẫn đóng; RDS chỉ nhận traffic từ EC2; quyền IAM theo nguyên tắc tối thiểu. |
+| Compute | EC2, EBS, Elastic IP, Nginx, API và worker hoạt động, có thể quản trị bằng SSM. |
+| Delivery | GitHub Actions build frontend, upload release, gọi SSM, kiểm tra health và giữ target rollback. |
+| Identity | Cognito trả về đúng callback URL và API chỉ chấp nhận access token hợp lệ. |
+| Operations | Log, health check, alarm, budget notification và hướng dẫn cleanup được ghi lại. |
 
 ### 3. Vấn đề cần giải quyết
 
-#### 3.1. Không thể chỉ phụ thuộc vào một đường triển khai
+#### 3.1. Soạn đề thủ công chậm và khó tái sử dụng
 
-Thiết kế ban đầu dự kiến dùng CDN để phân phối frontend. Khi CloudFront chưa dùng được trong môi trường làm việc, dự án cần một phương án thay thế thực tế nhưng vẫn phục vụ frontend an toàn và có thể vận hành bởi một nhóm nhỏ.
+Giáo viên thường phải viết lại câu hỏi cho nhiều lớp và nhiều lần thi. Việc lưu câu hỏi trong các tài liệu riêng lẻ cũng làm khó việc biết câu nào đã được review, đã duyệt hoặc đã sử dụng. AI Exam Maker cung cấp cơ chế sinh có cấu trúc và question bank có thể tìm kiếm, nhưng kết quả AI vẫn là bản nháp cho đến khi có người kiểm tra.
 
-#### 3.2. Hạ tầng cần có khả năng lặp lại
+#### 3.2. Kết quả AI không thể được tin tưởng nếu thiếu kiểm soát
 
-Tạo tài nguyên thủ công hoàn toàn trên AWS Console khiến việc review và dựng lại môi trường khó khăn. Vì vậy dự án cần thư mục hạ tầng và runbook được ghi lại, đồng thời không commit account ID, ARN thật, secret hay giá trị phụ thuộc môi trường.
+Language model có thể sinh sai cấu trúc, tạo câu hỏi trùng hoặc đưa ra đáp án không khớp với lời giải thích. Vì vậy ứng dụng xem kết quả AI là dữ liệu không đáng tin cậy. Hệ thống kiểm tra schema, ghi lại kết quả job, lọc trùng và yêu cầu giáo viên cùng trưởng bộ môn review trước khi publish.
 
-#### 3.3. Quản trị server trực tiếp làm tăng rủi ro
+#### 3.3. Tác vụ AI lâu không nên làm treo giao diện
 
-Mở SSH và lưu credential tĩnh tạo thêm bề mặt tấn công. Nền tảng sử dụng instance profile và Session Manager để quản trị, còn GitHub Actions dùng credential ngắn hạn qua OIDC để triển khai.
+Lệnh gọi model có thể mất vài giây và có thể lỗi tạm thời. API tạo job rồi gửi message vào SQS. Worker nhận job, gọi Bedrock, lưu kết quả và báo trạng thái kết thúc. Retry, dead-letter queue, lease và cơ chế recovery giúp giảm nguy cơ mất hoặc xử lý trùng công việc.
 
-#### 3.4. Release frontend cần có đường khôi phục
+#### 3.4. CloudFront chưa dùng được cho đường triển khai hiện tại
 
-Một lần deploy có thể lỗi trong khi hệ thống vẫn đang phục vụ người dùng. Mỗi release cần có định danh, được kiểm tra trước khi kích hoạt và được giữ cùng release trước đó để server có thể quay về phiên bản ổn định.
+Thiết kế frontend ban đầu dùng S3 kết hợp CloudFront behaviors và CloudFront Function. Vì CloudFront chưa thể dùng trong môi trường hiện tại, dự án cần phương án fallback không phụ thuộc CDN nhưng vẫn phục vụ được static export. Phương án thay thế lưu artifact có version trong S3 và dùng SSM để EC2 tải xuống rồi kích hoạt.
+
+#### 3.5. Truy cập hạ tầng phải an toàn và có thể lặp lại
+
+Mở SSH hoặc đưa credential vĩnh viễn vào GitHub Actions khiến hệ thống khó bảo vệ và khó review. Thiết kế triển khai dùng EC2 instance profile, Session Manager, IAM least privilege và GitHub OIDC. Các giá trị phụ thuộc môi trường được giữ bên ngoài repository.
 
 ### 4. Kiến trúc giải pháp
 
-AI Exam Maker chạy tại Region Singapore. Public subnet chứa EC2 chạy Nginx, frontend tĩnh, .NET API và AI worker. RDS PostgreSQL đặt trong private subnet. SQS tách rời các job AI, còn Cognito, Parameter Store, CloudWatch, SNS và Budgets hỗ trợ định danh, cấu hình, vận hành và kiểm soát chi phí.
+AI Exam Maker chạy tại Region `ap-southeast-1` (Singapore). Kiến trúc cố ý dùng một EC2 và database RDS Single-AZ cho môi trường demo để giảm chi phí và độ phức tạp vận hành. Đây là trade-off được chấp nhận cho giai đoạn trình diễn, không phải cam kết về high availability production.
 
 ![Kiến trúc AWS của AI Exam Maker](/fcj-workshop-template/images/2-Proposal/project-architecture.jpg)
 
-#### 4.1. Các thành phần chính
+#### 4.1. Trách nhiệm của các thành phần
 
-- **VPC và security group**: public subnet cho EC2, private subnet cho RDS, không dùng NAT Gateway và chỉ mở các rule cần thiết.
-- **EC2 và EBS**: máy ARM có Elastic IP, chạy Nginx, .NET API và worker bằng systemd.
-- **Domain và HTTPS**: domain ứng dụng trỏ đến điểm vào công khai; Nginx kết thúc HTTPS và chuyển tiếp traffic API.
-- **Amazon RDS for PostgreSQL**: chỉ security group của EC2 được phép kết nối đến database riêng tư.
-- **Amazon Cognito**: đăng nhập và các group role hỗ trợ teacher, head và admin.
-- **Amazon SQS và Amazon Bedrock**: API đưa job vào queue và worker xử lý bất đồng bộ.
-- **Amazon S3 và AWS Systems Manager**: S3 lưu gói release; SSM Run Command khởi chạy triển khai trên EC2.
-- **GitHub Actions và IAM OIDC**: workflow nhận credential tạm thời mà không lưu access key.
-- **CloudWatch, SNS và AWS Budgets**: log, alarm, thông báo và giới hạn chi phí cho môi trường trình diễn.
+| Thành phần | Trách nhiệm |
+|---|---|
+| VPC, subnet và Internet Gateway | Tách compute công khai khỏi database riêng tư và cung cấp đường mạng cần thiết. |
+| Security group | Cho phép HTTPS và traffic xác thực certificate đến EC2; chỉ cho EC2 kết nối PostgreSQL đến RDS. |
+| EC2, EBS và Elastic IP | Chạy Nginx, frontend tĩnh, .NET API và AI worker bằng systemd. |
+| Nginx và domain | Kết thúc HTTPS, phục vụ release đang active và chuyển `/api/*` đến API. |
+| Amazon RDS for PostgreSQL | Lưu user, department, question, job, exam, version và audit record trong private subnet. |
+| Amazon Cognito | Xác thực người dùng và cung cấp các group teacher, head, admin. |
+| Amazon SQS và DLQ | Tách request sinh câu hỏi khỏi worker và giữ message lỗi nhiều lần. |
+| Amazon Bedrock | Sinh câu hỏi nháp và tùy chọn kiểm tra đáp án theo workflow. |
+| SSM Parameter Store và KMS | Cung cấp cấu hình và giá trị mã hóa mà không commit vào Git. |
+| Amazon S3 | Lưu package release frontend và checksum để triển khai/rollback. |
+| GitHub Actions và OIDC | Build, test, package và deploy mà không cần AWS credential dài hạn. |
+| CloudWatch, SNS và Budgets | Thu log, thông báo alarm quan trọng và theo dõi chi phí. |
 
-#### 4.2. Luồng phân phối frontend
+#### 4.2. Thiết kế network và security
 
-GitHub Actions build và kiểm tra bản xuất tĩnh Next.js. Workflow đóng gói release kèm checksum rồi upload vào prefix S3 của dự án. Sau đó workflow gọi SSM. Script trên EC2 tải artifact, kiểm checksum, giải nén vào thư mục release mới, cập nhật symlink `current`, reload Nginx và giữ release trước để rollback. Khi CloudFront có thể sử dụng, thiết kế có thể quay lại CDN; luồng S3–SSM–EC2 là phương án fallback đang dùng.
+VPC có public subnet cho EC2 và private subnet cho RDS. Thiết kế không dùng NAT Gateway vì môi trường demo không cần khoản chi phí cố định bổ sung này. EC2 chỉ nhận traffic cần thiết cho HTTPS và xác thực certificate. Port 22 không được mở. RDS chỉ chấp nhận kết nối PostgreSQL từ security group của EC2, không mở theo một CIDR public rộng.
 
-#### 4.3. Nguyên tắc bảo mật
+EC2 nhận quyền thông qua instance profile. Session Manager được dùng cho truy cập quản trị và thực thi lệnh. GitHub Actions assume deployment role thông qua GitHub OIDC provider. Role được giới hạn theo repository, branch và các điều kiện workflow mà IAM hỗ trợ, đồng thời chỉ có quyền S3 và SSM cần thiết cho deployment.
 
-- Không cần inbound SSH; quản trị bằng Session Manager.
-- EC2 và RDS liên lạc bằng tham chiếu security group thay vì mở mạng rộng.
-- GitHub nhận credential role tạm thời qua OIDC.
-- Secret và định danh phụ thuộc môi trường nằm ngoài repository.
-- Backend là nơi quyết định cuối cùng về role, tổ bộ môn, quyền sở hữu và trạng thái nội dung.
+#### 4.3. Luồng frontend và phương án CloudFront fallback
 
-### 5. Lộ trình triển khai
+Đường CDN dự kiến dùng S3 làm origin frontend và CloudFront behaviors cho static asset và API. Khi CDN chưa thể dùng, luồng triển khai hoạt động như sau:
 
-Việc triển khai bám theo roadmap của nhóm từ ngày 17/11 đến ngày 01/12/2026.
+1. GitHub Actions cài dependency, build static export Next.js và chạy các bước CI.
+2. Workflow đóng gói output thành release có version và tạo checksum SHA-256.
+3. Artifact cùng checksum được upload vào release prefix trên S3.
+4. Workflow gọi SSM Run Command trên EC2 đích.
+5. EC2 tải artifact, kiểm checksum và giải nén vào thư mục release mới.
+6. Script chỉ cập nhật symlink `current` sau khi release mới đã sẵn sàng.
+7. Nginx được reload và thực hiện health check hoặc kiểm tra asset công khai.
+8. Release trước vẫn được giữ để có thể rollback nếu activation thất bại.
 
-- **Chốt nền**: thống nhất quyết định AWS, ghi lại phương án hạ tầng và chuẩn bị ranh giới repository.
-- **Dựng nền tảng**: tạo VPC, security group, EC2, EBS, Elastic IP, Session Manager, domain và HTTPS.
-- **Tự động hóa phát hành**: cấu hình OIDC, deploy role, luồng artifact S3, SSM Run Command và rollback frontend.
-- **Tích hợp và kiểm tra**: kiểm tra Cognito với nhóm frontend, kiểm tra health/deploy và chuẩn bị minh chứng cho demo.
+Luồng này giúp việc triển khai có thể truy vết: GitHub run, S3 artifact, SSM invocation, thư mục release trên EC2 và symlink active đều có thể kiểm tra riêng.
 
-### 6. Ước tính ngân sách
+#### 4.4. Luồng xác thực
 
-Kiến trúc được giữ gọn để dự án nằm trong khoản tín dụng phát triển 200 USD. Các khoản chính gồm thời gian chạy EC2, EBS, public IPv4, thời gian và dung lượng RDS, mức dùng model AI, log và truyền dữ liệu. S3, SQS, Cognito, Parameter Store, SNS và Systems Manager được giữ ở mức sử dụng thấp phù hợp với môi trường trình diễn.
+Người dùng mở ứng dụng qua HTTPS và chọn đăng nhập. Cognito xác thực rồi trả authorization code về callback URL đã cấu hình. Frontend đổi code bằng PKCE, lưu session theo thiết kế ứng dụng và gọi API bằng access token. Backend kiểm tra issuer, audience, hạn token và hồ sơ user nội bộ trước khi trả dữ liệu bảo vệ. Khi logout, session cục bộ được xóa và người dùng trở về sign-out path đã cấu hình.
 
-Các biện pháp kiểm soát chi phí gồm dừng EC2 và RDS ngoài giờ làm việc, dùng model rẻ hơn trong giai đoạn phát triển, giới hạn số request và token AI, chỉ giữ log và artifact cần thiết, đồng thời bật cảnh báo AWS Budgets ở 50%, 80% và 100%.
+#### 4.5. Luồng xử lý AI job
 
-### 7. Đánh giá rủi ro và phương án giảm thiểu
+API kiểm tra request, role, department, quota và các giá trị catalog được chọn. Sau đó API tạo job và gửi message vào SQS. Worker claim job, kiểm tra token budget trước mỗi lần gọi model, gọi Bedrock, kiểm tra và sanitize kết quả, lọc trùng khi cần và lưu câu hỏi nháp. Frontend polling trạng thái job và hiển thị lỗi có thể phục hồi nếu worker chưa hoàn tất. Các message SQS lặp lại không được tạo ra câu hỏi trùng.
 
-| Rủi ro | Ảnh hưởng | Phương án giảm thiểu |
+### 5. Kế hoạch triển khai kỹ thuật
+
+#### Giai đoạn 0 — Chốt quyết định AWS và ranh giới hạ tầng
+
+- Chốt region, phương án domain, loại EC2, giả định model/quota, ranh giới IaC/runbook và chiến lược fallback.
+- Đặt các ví dụ hạ tầng và script trong `/infra`, không chứa ID, ARN, secret hoặc giá trị phụ thuộc account thật.
+- Xác định các điểm review cho VPC rule, IAM permission, deployment artifact và cleanup.
+
+#### Giai đoạn 1 — Network, compute và HTTPS
+
+- Tạo VPC, public/private subnet, route table, Internet Gateway và security group.
+- Chuẩn bị EC2, EBS, Elastic IP, instance profile, SSM Agent access và systemd service boundary.
+- Cấu hình domain, Nginx reverse proxy, HTTPS certificate, timer gia hạn và kiểm tra header origin nếu cần.
+- Xác nhận backend truy cập RDS qua private network và các đường inbound không cần thiết vẫn đóng.
+
+#### Giai đoạn 2 — Identity và tự động hóa triển khai
+
+- Cấu hình GitHub OIDC provider và deployment IAM role với quyền S3/SSM tối thiểu.
+- Xây dựng workflow frontend và đóng gói mỗi release kèm checksum.
+- Upload artifact lên S3 và trigger triển khai EC2 qua SSM thay vì SSH.
+- Giải nén vào release mới, cập nhật `current`, reload Nginx, kiểm tra kết quả và giữ release trước để rollback.
+
+#### Giai đoạn 3 — Tích hợp và minh chứng
+
+- Kiểm tra Cognito sign-in, callback, logout, protected API và frontend trên domain thật.
+- Kiểm tra deployment thành công/thất bại, bao gồm checksum failure và rollback.
+- Chụp minh chứng không nhạy cảm từ VPC, EC2, SSM, IAM, S3, GitHub Actions và health check.
+- Review cost control, log, alarm và cleanup trước buổi demo nhóm.
+
+### 6. Lộ trình và mốc triển khai
+
+Roadmap của nhóm chạy từ ngày 17/11 đến ngày 01/12/2026. Công việc được chia song song để nhóm ứng dụng phát triển trong khi phần hạ tầng được chuẩn bị.
+
+| Thời gian | Trọng tâm | Sản phẩm hạ tầng |
 |---|---|---|
-| CloudFront chưa dùng được trong môi trường | Trung bình | Phục vụ frontend tĩnh bằng Nginx trên EC2, dùng S3 và SSM để phát hành. |
-| Deploy lỗi sau khi upload artifact | Cao | Kiểm checksum và health; giữ release trước để rollback. |
-| EC2 hoặc RDS không khả dụng | Cao | Dùng systemd restart, backup RDS, thử restore và ghi rõ trade-off của môi trường demo. |
-| Security group mở quá rộng | Cao | Đóng SSH, giới hạn RDS theo security group của EC2 và review port/prefix list cần dùng. |
-| Lộ credential AWS dài hạn | Cao | Dùng instance profile và GitHub OIDC với quyền tối thiểu. |
-| Chi phí AI vượt tín dụng | Cao | Giới hạn quota và token, bật budget alert, dừng tài nguyên ngoài giờ. |
-| Callback Cognito cấu hình sai | Trung bình | Kiểm tra end-to-end đăng nhập, callback, logout và truy cập API bảo vệ bằng domain thật. |
+| 17–19/11 | Chốt nền | Quyết định AWS, runbook hạ tầng, rules repository và ranh giới CI ban đầu. |
+| 20–24/11 | Nền tảng | VPC, security group, EC2, EBS, Elastic IP, Session Manager, domain, Nginx và HTTPS. |
+| 25–29/11 | Tính năng và delivery | OIDC role, S3 release path, SSM deployment, frontend rollback và tích hợp đăng nhập. |
+| 30/11–01/12 | Hoàn thiện | E2E check, minh chứng recovery, review budget, cleanup và chuẩn bị demo. |
 
-### 8. Kết luận và kết quả kỳ vọng
+Luồng demo chính được ưu tiên hơn các mục tùy chọn. Nếu thiếu thời gian, các cải tiến về availability production và automation không thiết yếu sẽ được để sau thay vì làm yếu network, authentication hoặc rollback.
 
-AI Exam Maker kết hợp việc soạn câu hỏi có hỗ trợ AI với quy trình rà soát, duyệt và phát hành đề có thể truy vết. Phần hạ tầng của em tạo ra con đường an toàn và có thể lặp lại từ một commit GitHub đến frontend đang chạy, đồng thời vẫn có phương án dự phòng khi CloudFront chưa dùng được. Kết quả kỳ vọng là môi trường AWS sẵn sàng cho demo với ranh giới mạng rõ ràng, HTTPS, quản trị bằng Session Manager, triển khai qua OIDC, log/alarm, rollback và kiểm soát chi phí.
+### 7. Ước tính ngân sách và kiểm soát chi phí
 
-Về sau, kiến trúc có thể mở rộng thêm load balancer, database Multi-AZ, CDN, nhập tài liệu phong phú hơn và mức sẵn sàng cao hơn khi dự án chuyển khỏi phạm vi trình diễn.
+Ước tính áp dụng cho giai đoạn phát triển và demo tại `ap-southeast-1`. Chi phí thực tế phụ thuộc số giờ chạy, dung lượng lưu trữ, traffic, số token AI và bảng giá AWS tại thời điểm sử dụng; các con số dưới đây là giả định lập kế hoạch, không phải hóa đơn cố định.
+
+| Nhóm chi phí | Giả định | Biện pháp kiểm soát |
+|---|---|---|
+| EC2 và public IPv4 | Máy ARM nhỏ và Elastic IP chỉ chạy trong giờ làm việc. | Dừng instance ngoài lịch và release IP không dùng sau demo. |
+| EBS | Một volume general-purpose nhỏ cho release và log. | Xóa volume rời và chỉ giữ số release cần thiết. |
+| RDS | PostgreSQL Single-AZ nhỏ, encrypted storage và backup ngắn hạn. | Dừng ngoài giờ, theo dõi storage và xóa snapshot tạm sau khi review. |
+| S3 | Một số lượng nhỏ package release frontend và checksum. | Dùng release prefix và lifecycle cleanup artifact cũ. |
+| AI services | Dùng model rẻ hơn khi phát triển và giới hạn request khi demo. | Enforce quota theo user/toàn hệ thống và token ceiling trước model call. |
+| Log và alarm | Log retention 7 ngày và nhóm alarm có giá trị cao. | Không log payload quá chi tiết và kiểm soát số lượng alarm. |
+
+AWS Budgets được cấu hình cảnh báo ở 50%, 80% và 100% của khoản tín dụng 200 USD. Ứng dụng cũng giới hạn số câu hỏi mỗi request và số lần sinh theo ngày. Việc kết hợp lịch chạy hạ tầng với quota trong ứng dụng giúp giảm nguy cơ một lần test hoặc job lặp tiêu hết ngân sách.
+
+### 8. Đánh giá rủi ro và phương án giảm thiểu
+
+| Rủi ro | Ảnh hưởng | Khả năng | Giảm thiểu và dự phòng |
+|---|---|---|---|
+| AI sinh đáp án sai | Cao | Trung bình | Giữ output ở dạng draft, kiểm tra cấu trúc, cho phép verify và yêu cầu con người duyệt. |
+| SQS giao trùng hoặc worker crash | Trung bình | Trung bình | Idempotent job claim, unique constraint, lease, heartbeat, retry và DLQ. |
+| Truy cập trái phép vào draft/đáp án | Nghiêm trọng | Thấp | Backend kiểm tra role, department, ownership, content state; test permission matrix. |
+| CloudFront không dùng được | Trung bình | Cao | Dùng fallback S3–SSM–EC2 và phục vụ frontend tĩnh qua Nginx/HTTPS. |
+| Release hỏng hoặc deployment thất bại | Cao | Trung bình | Kiểm SHA-256, health check, activation qua `current` và giữ release trước để rollback. |
+| EC2 hoặc RDS Single-AZ lỗi | Cao | Thấp | Chấp nhận trade-off demo, dùng systemd restart, RDS backup và thử restore. |
+| EC2 bị scan từ Internet | Trung bình | Trung bình | Chỉ mở 443 và traffic xác thực cần thiết; đóng SSH, dùng Session Manager. |
+| GitHub credential bị lộ | Nghiêm trọng | Thấp | Dùng OIDC ngắn hạn, giới hạn repository/branch, least privilege và secret scanning. |
+| Cognito callback sai | Trung bình | Trung bình | Kiểm tra login, callback, logout và protected API trên frontend đã deploy. |
+| Trễ tiến độ hai tuần | Cao | Trung bình | Làm song song, ưu tiên demo chính và hoãn tính năng production tùy chọn. |
+
+### 9. Sản phẩm bàn giao kỳ vọng
+
+- Tài liệu kiến trúc AWS và quyết định hạ tầng.
+- Cấu hình VPC, subnet, route, security group, EC2, EBS, Elastic IP, Nginx, HTTPS và Session Manager.
+- GitHub OIDC provider và deployment role theo nguyên tắc quyền tối thiểu.
+- Workflow CI/CD frontend, S3 release artifact, SSM deployment script, health check và rollback path.
+- Luồng tích hợp Cognito sign-in end-to-end với nhóm frontend.
+- Screenshot không nhạy cảm và runbook làm minh chứng cho worklog và buổi demo.
+- Hướng dẫn cleanup gồm snapshot, EBS volume, Elastic IP, S3 artifact và tài nguyên đã stop.
+
+### 10. Kết luận và hướng phát triển
+
+AI Exam Maker kết hợp việc tạo câu hỏi có hỗ trợ AI với quy trình duyệt đề có thể review và truy vết. Thiết kế hạ tầng cân bằng giữa bảo mật, chi phí và tốc độ triển khai: database nằm trong private subnet, quản trị dùng Session Manager, GitHub dùng OIDC, còn frontend release được kiểm tra và rollback. Phương án fallback CloudFront giúp dự án vẫn có thể demo ngay cả khi đường CDN ban đầu chưa dùng được.
+
+Trong giai đoạn tiếp theo, kiến trúc có thể mở rộng thêm load balancer, database Multi-AZ, CDN/WAF, mức độ IaC cao hơn, sinh câu hỏi từ tài liệu, exam blueprint, nhiều biến thể đề và DOCX export. Các cải tiến đó nên thực hiện sau khi luồng demo cốt lõi ổn định và giả định ngân sách được kiểm tra lại.
