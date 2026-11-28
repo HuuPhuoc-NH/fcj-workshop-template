@@ -8,11 +8,11 @@ pre: " <b> 4.1. </b> "
 
 ## Bài thu hoạch sự kiện Fireside Chat with Dr. Werner Vogels
 
-### Tổng quan sự kiện
+### Thông tin tổng quan sự kiện
 
 Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành cho cộng đồng AWS, tập trung vào quy mô hệ thống, tư duy phát triển sản phẩm và vai trò của kỹ sư trong thời đại AI.
 
-### Mục tiêu sự kiện
+### Mục đích và bối cảnh sự kiện
 
 - Hiểu thêm cách Amazon tiếp cận việc xây dựng và vận hành hệ thống ở quy mô rất lớn.
 - Kết nối các khái niệm về độ tin cậy, hiệu năng và trải nghiệm người dùng với công việc phát triển phần mềm thực tế.
@@ -28,7 +28,7 @@ Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành
 | Vai trò | Người tham dự |
 | Chủ đề | AI, Cloud, CloudFront, Amazon QuickSight, LLM và multi-agent |
 
-### Nội dung chính
+### Nội dung nổi bật
 
 #### Bài học từ các hệ thống phân tán quy mô lớn
 
@@ -50,13 +50,13 @@ Khái niệm Renaissance Developer gợi cho em hình ảnh một kỹ sư khôn
 
 Các bài học về P99.9, khả năng phục hồi và tư duy hướng người dùng có thể áp dụng khi thiết kế API, triển khai frontend và theo dõi hệ thống AWS trong dự án thực tập.
 
-### Những điều học được
+### Bài học rút ra
 
 - Độ tin cậy cần được đánh giá bằng các chỉ số phản ánh nhóm người dùng có trải nghiệm kém nhất.
 - Hệ thống phân tán phải được thiết kế cùng với khả năng mở rộng, quan sát và phục hồi.
 - Diễn tập sự cố giúp đội ngũ chuẩn bị tốt hơn cho các tình huống ngoài dự kiến.
 - Kỹ sư nên hiểu cả sản phẩm, người dùng và vận hành thay vì chỉ tập trung vào mã nguồn.
 
-### Trải nghiệm cá nhân
+### Ứng dụng thực tế vào quá trình thực tập và dự án AWS
 
 Em đánh giá cao cách sự kiện kết hợp giữa kinh nghiệm thực tế và những bài học có thể áp dụng ngay vào quá trình xây dựng hệ thống. Phần chia sẻ giúp em có thêm động lực học sâu hơn về kiến trúc Cloud và rèn luyện tư duy của một kỹ sư chịu trách nhiệm cho toàn bộ vòng đời sản phẩm.

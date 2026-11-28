@@ -8,11 +8,11 @@ pre: " <b> 4.2. </b> "
 
 ## Bài thu hoạch sự kiện First Cloud AI Journey Meetup
 
-### Tổng quan sự kiện
+### Thông tin tổng quan sự kiện
 
 Event 2 tập trung vào cách AI đang được đưa vào sản phẩm, vận hành hệ thống và kết nối với dữ liệu doanh nghiệp. Các phần trình bày kết hợp giữa khái niệm, kiến trúc và ví dụ minh họa để người tham dự hình dung rõ hơn về khả năng ứng dụng của AI trên AWS.
 
-### Mục tiêu sự kiện
+### Mục đích và kỳ vọng khi tham gia
 
 - Tìm hiểu các cách đưa AI Agent từ bản thử nghiệm vào quy trình và sản phẩm thực tế.
 - Quan sát cách các dịch vụ AWS hỗ trợ chia sẻ tài nguyên, bảo mật và vận hành hệ thống.
@@ -28,7 +28,7 @@ Event 2 tập trung vào cách AI đang được đưa vào sản phẩm, vận 
 | Vai trò | Người tham dự |
 | Chủ đề | AI Agents, Voice AI, DevOps, Amazon Bedrock và MCP |
 
-### Nội dung chính
+### Nội dung chi tiết các phiên chia sẻ
 
 #### AI Agent trong quy trình phát triển và vận hành
 
@@ -50,7 +50,7 @@ Em biết thêm về hướng dùng AI Agent để hỗ trợ kiểm thử bảo
 
 Phần demo Kiro Crew cho thấy một trợ lý AI có thể hỗ trợ review code, kiểm tra tiêu chuẩn và theo dõi thông tin kỹ thuật. Em chú ý rằng trợ lý dạng này cần quản lý context, token và quyền truy cập cẩn thận để hoạt động an toàn.
 
-### Những điều học được
+### Những giá trị và bài học rút ra
 
 - AI Agent cần được triển khai cùng giới hạn quyền, kiểm tra và cơ chế phê duyệt phù hợp.
 - Voice AI phải cân bằng độ trễ, độ chính xác và khả năng duy trì ngữ cảnh.
@@ -58,6 +58,6 @@ Phần demo Kiro Crew cho thấy một trợ lý AI có thể hỗ trợ review 
 - AI có thể hỗ trợ kiểm thử bảo mật, nhưng không thay thế hoàn toàn trách nhiệm của kỹ sư.
 - Trợ lý AI cho kỹ sư cần quản lý context, token và dữ liệu nội bộ cẩn thận.
 
-### Trải nghiệm cá nhân
+### Ứng dụng thực tế vào quá trình thực tập và dự án AWS
 
 Event giúp em nhìn AI dưới góc độ xây dựng hệ thống thay vì chỉ sử dụng một công cụ trò chuyện. Các chủ đề về AI Agent, bảo mật và vận hành cũng gợi ý cho em nhiều cách để tiếp tục học và áp dụng kiến thức AWS vào dự án nhóm.

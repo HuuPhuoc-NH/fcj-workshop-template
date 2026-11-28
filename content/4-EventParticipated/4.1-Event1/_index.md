@@ -8,11 +8,11 @@ pre: " <b> 4.1. </b> "
 
 ## Fireside Chat with Dr. Werner Vogels Reflection
 
-### Event overview
+### Event information
 
 Fireside Chat with Dr. Werner Vogels was a technical conversation for the AWS community, focusing on system scale, product thinking, and the role of engineers in the AI era.
 
-### Event objectives
+### Objectives and context
 
 - Understand how Amazon approaches building and operating systems at very large scale.
 - Connect reliability, performance, and user experience with practical software engineering.
@@ -28,7 +28,7 @@ Fireside Chat with Dr. Werner Vogels was a technical conversation for the AWS co
 | Role | Attendee |
 | Topics | AI, Cloud, CloudFront, Amazon QuickSight, LLMs, and multi-agent systems |
 
-### Main topics
+### Key topics discussed
 
 #### Lessons from large-scale distributed systems
 
@@ -50,13 +50,13 @@ The Renaissance Developer idea presents an engineer as someone who considers use
 
 The lessons about P99.9, resilience, and user-oriented engineering can be applied when designing APIs, deploying the frontend, and monitoring AWS services during my internship project.
 
-### Key takeaways
+### Lessons learned
 
 - Evaluate reliability with metrics that reflect the users who have the worst experience.
 - Design distributed systems together with scalability, observability, and recovery.
 - Use incident exercises to prepare for unexpected conditions.
 - Understand the product, users, and operations instead of focusing only on source code.
 
-### Personal reflection
+### Practical application to my internship and AWS project
 
 I appreciated the combination of practical experience and lessons that can be applied directly to system building. The event encouraged me to study cloud architecture more deeply and develop an engineering mindset that covers the full product lifecycle.

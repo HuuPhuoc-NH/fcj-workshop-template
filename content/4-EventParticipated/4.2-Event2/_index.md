@@ -8,11 +8,11 @@ pre: " <b> 4.2. </b> "
 
 ## First Cloud AI Journey Meetup Reflection
 
-### Event overview
+### Event information
 
 Event 2 focused on bringing AI into products, cloud operations, and enterprise data integration. The sessions combined concepts, architecture patterns, and practical examples to explain how AI can be applied on AWS.
 
-### Event objectives
+### Objectives and expectations
 
 - Explore how AI Agents can move from prototypes into real products and operational workflows.
 - Observe how AWS services support resource sharing, security, and system operations.
@@ -28,7 +28,7 @@ Event 2 focused on bringing AI into products, cloud operations, and enterprise d
 | Role | Attendee |
 | Topics | AI Agents, Voice AI, DevOps, Amazon Bedrock, and MCP |
 
-### Main topics
+### In-depth technical sessions
 
 #### AI Agents in development and operations
 
@@ -50,7 +50,7 @@ I also learned about using AI Agents to support security testing in SIT/UAT envi
 
 The Kiro Crew demonstration showed how an AI assistant can help with code review, standards checking, and technical context. I also noted that context, token usage, and access permissions must be managed carefully.
 
-### Key takeaways
+### Key values and lessons learned
 
 - AI Agents should be deployed with appropriate permission limits, validation, and approval mechanisms.
 - Voice AI must balance latency, accuracy, and conversational context.
@@ -58,6 +58,6 @@ The Kiro Crew demonstration showed how an AI assistant can help with code review
 - AI can support security testing, but it does not replace engineering responsibility.
 - Engineering assistants need careful management of context, tokens, and internal data.
 
-### Personal reflection
+### Practical application to my internship and AWS project
 
 This event helped me view AI from a system-building perspective rather than only as a chat tool. The topics of AI Agents, security, and operations also gave me ideas for continuing my AWS learning and applying it to the team project.
