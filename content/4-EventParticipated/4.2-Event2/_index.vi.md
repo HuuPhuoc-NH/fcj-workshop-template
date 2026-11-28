@@ -65,26 +65,26 @@ Event giúp em nhìn AI dưới góc độ xây dựng hệ thống thay vì ch�
 ### Hình ảnh thực tế và minh chứng tham gia sự kiện
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 1: Không khí của buổi First Cloud AI Journey Meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-02.jpg" alt="Nội dung chia sẻ tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-02.jpg" alt="Nội dung chia sẻ tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 2: Nội dung chia sẻ và hoạt động tại sự kiện.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-03.jpg" alt="Người tham dự tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-03.jpg" alt="Người tham dự tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 3: Người tham dự giao lưu trong chương trình.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-04.jpg" alt="Hoạt động của sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-04.jpg" alt="Hoạt động của sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 4: Hoạt động kết nối cộng đồng tại sự kiện.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-05.jpg" alt="Minh chứng tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-05.jpg" alt="Minh chứng tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 5: Minh chứng tham gia First Cloud AI Journey Meetup.</figcaption>
 </figure>

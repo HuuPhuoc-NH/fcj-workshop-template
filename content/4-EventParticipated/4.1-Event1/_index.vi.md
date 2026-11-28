@@ -64,11 +64,11 @@ Em đánh giá cao cách sự kiện kết hợp giữa kinh nghiệm thực t�
 ### Hình ảnh thực tế và minh chứng tham gia sự kiện
 
 <figure style="text-align: center;">
-<img src="/images/events/event1-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event1-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 1: Hình ảnh tham gia Fireside Chat with Dr. Werner Vogels.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event1-02.jpg" alt="Minh chứng tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event1-02.jpg" alt="Minh chứng tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 2: Minh chứng tham gia sự kiện tại văn phòng AWS.</figcaption>
 </figure>

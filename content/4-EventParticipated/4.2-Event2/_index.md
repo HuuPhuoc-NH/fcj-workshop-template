@@ -65,26 +65,26 @@ This event helped me view AI from a system-building perspective rather than only
 ### Event photo highlights and attendance proof
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-01.jpg" alt="Attendance at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-01.jpg" alt="Attendance at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 1: Atmosphere at the First Cloud AI Journey Meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-02.jpg" alt="Sessions at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-02.jpg" alt="Sessions at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 2: Sessions and activities during the event.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-03.jpg" alt="Attendees at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-03.jpg" alt="Attendees at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 3: Participants connecting during the meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-04.jpg" alt="Community activity at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-04.jpg" alt="Community activity at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 4: Community networking activity.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event2-05.jpg" alt="Attendance proof for the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event2-05.jpg" alt="Attendance proof for the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 5: Attendance proof for the First Cloud AI Journey Meetup.</figcaption>
 </figure>

@@ -64,11 +64,11 @@ I appreciated the combination of practical experience and lessons that can be ap
 ### Event photo highlights and attendance proof
 
 <figure style="text-align: center;">
-<img src="/images/events/event1-01.jpg" alt="Attendance at the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event1-01.jpg" alt="Attendance at the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 1: Attendance at the Fireside Chat with Dr. Werner Vogels.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="/images/events/event1-02.jpg" alt="Attendance proof for the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="../../images/events/event1-02.jpg" alt="Attendance proof for the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 2: Attendance proof at the AWS office.</figcaption>
 </figure>
