@@ -61,7 +61,7 @@ A deployment can fail while the application is serving users. Each release must 
 
 AI Exam Maker runs in the Singapore AWS Region. A public subnet contains the EC2 instance that runs Nginx, the static frontend, the .NET API, and the AI worker. RDS PostgreSQL remains in private subnets. SQS decouples AI jobs, while Cognito, Parameter Store, CloudWatch, SNS, and Budgets support identity, configuration, operations, and cost control.
 
-![AI Exam Maker AWS architecture](/images/2-Proposal/project-architecture.jpg)
+![AI Exam Maker AWS architecture](/fcj-workshop-template/images/2-Proposal/project-architecture.jpg)
 
 #### 4.1. Main Components
 

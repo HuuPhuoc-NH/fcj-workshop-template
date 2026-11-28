@@ -61,7 +61,7 @@ Một lần deploy có thể lỗi trong khi hệ thống vẫn đang phục v�
 
 AI Exam Maker chạy tại Region Singapore. Public subnet chứa EC2 chạy Nginx, frontend tĩnh, .NET API và AI worker. RDS PostgreSQL đặt trong private subnet. SQS tách rời các job AI, còn Cognito, Parameter Store, CloudWatch, SNS và Budgets hỗ trợ định danh, cấu hình, vận hành và kiểm soát chi phí.
 
-![Kiến trúc AWS của AI Exam Maker](/images/2-Proposal/project-architecture.jpg)
+![Kiến trúc AWS của AI Exam Maker](/fcj-workshop-template/images/2-Proposal/project-architecture.jpg)
 
 #### 4.1. Các thành phần chính
 
