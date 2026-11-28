@@ -12,6 +12,12 @@ pre: " <b> 4.2. </b> "
 
 Event 2 focused on bringing AI into products, cloud operations, and enterprise data integration. The sessions combined concepts, architecture patterns, and practical examples to explain how AI can be applied on AWS.
 
+### Event objectives
+
+- Explore how AI Agents can move from prototypes into real products and operational workflows.
+- Observe how AWS services support resource sharing, security, and system operations.
+- Expand my network with engineers, Tech Leads, and AWS Community Builders.
+
 ### Event information
 
 | Information | Details |
@@ -24,34 +30,34 @@ Event 2 focused on bringing AI into products, cloud operations, and enterprise d
 
 ### Main topics
 
-#### Moving from alerts to proactive incident handling
+#### AI Agents in development and operations
 
-The first topic presented an approach in which a system can do more than detect an alert. It can also analyze the likely cause and recommend or perform a remediation step. This direction can help reduce detection and recovery time in cloud environments.
+The practical examples showed how an AI Agent can read context, analyze an issue, and suggest a next step in development or operations. Execution permissions still need to be limited and controlled by explicit policies.
 
-#### Voice Agents and Amazon Nova Sonic
+#### Voice AI and natural interaction
 
-I learned about the transition from traditional IVR and chatbots to more natural Voice Agent systems. Latency, accuracy, context, and the ability to handle interruptions all have a direct impact on the user experience.
+I learned how Voice Agents can provide a more natural interaction than traditional IVR systems. Latency, context understanding, interruption handling, and conversational quality all have a direct impact on user experience.
 
-#### AWS DevOps Agent and multi-agent architecture
+#### AWS resource sharing and security
 
-The DevOps Agent discussion showed how AI can assist with monitoring, diagnosis, and remediation. Separating these responsibilities into monitoring, diagnosis, and remediation agents can make an operations workflow easier to extend.
+The AWS Resource Access Manager session helped me understand how resources can be shared across accounts while keeping permission boundaries. IAM policies and organization-level controls should work together to avoid excessive access.
 
-#### AI for enterprise productivity
+#### AI-assisted security testing
 
-The event also covered the use of AI for workforce analysis, resource planning, and business decisions. This example helped me see that AI can support business departments as well as technical teams.
+I also learned about using AI Agents to support security testing in SIT/UAT environments. An agent can act as a tester, identify business-logic issues, and detect configuration mistakes before release.
 
-#### MCP and private connectivity
+#### Kiro Crew as an engineering assistant
 
-MCP was introduced as a way for AI to connect with external tools, APIs, and data. In an enterprise environment, placing the MCP server in a private network and controlling access with IAM can reduce the risks of allowing AI to interact with internal systems.
+The Kiro Crew demonstration showed how an AI assistant can help with code review, standards checking, and technical context. I also noted that context, token usage, and access permissions must be managed carefully.
 
 ### Key takeaways
 
-- AI can support the complete flow from incident detection to remediation.
-- Voice Agents must balance latency, accuracy, and conversational context.
-- Multi-agent designs separate responsibilities and improve maintainability.
-- AI can create value in both technical operations and business workflows.
-- MCP should be designed together with private networking, IAM, and data protection.
+- AI Agents should be deployed with appropriate permission limits, validation, and approval mechanisms.
+- Voice AI must balance latency, accuracy, and conversational context.
+- AWS resource sharing requires IAM and organization-level protection.
+- AI can support security testing, but it does not replace engineering responsibility.
+- Engineering assistants need careful management of context, tokens, and internal data.
 
 ### Personal reflection
 
-This event helped me view AI from a system-building perspective rather than only as a chat tool. The topics of DevOps, Bedrock, and MCP also gave me ideas for continuing my AWS learning and applying it to the team project.
+This event helped me view AI from a system-building perspective rather than only as a chat tool. The topics of AI Agents, security, and operations also gave me ideas for continuing my AWS learning and applying it to the team project.

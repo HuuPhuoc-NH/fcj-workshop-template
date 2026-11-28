@@ -12,6 +12,12 @@ pre: " <b> 4.1. </b> "
 
 Fireside Chat with Dr. Werner Vogels was a technical conversation for the AWS community, focusing on system scale, product thinking, and the role of engineers in the AI era.
 
+### Event objectives
+
+- Understand how Amazon approaches building and operating systems at very large scale.
+- Connect reliability, performance, and user experience with practical software engineering.
+- Learn from a technology leader and broaden my career perspective in cloud engineering.
+
 ### Event information
 
 | Information | Details |
@@ -24,34 +30,33 @@ Fireside Chat with Dr. Werner Vogels was a technical conversation for the AWS co
 
 ### Main topics
 
-#### The importance of context when using AI
+#### Lessons from large-scale distributed systems
 
-The first discussion showed that AI output quality depends heavily on the information provided by the user. A request with a clear goal, background, examples, and constraints usually produces a more useful result than a short and generic prompt.
+The conversation gave me a clearer view of the challenges involved in serving a very large user base. A system must be designed not only around features, but also around scalability, latency, and recovery from failures.
 
-#### Amazon QuickSight and data exploration
+#### Reliability and the P99.9 perspective
 
-The event also demonstrated how natural-language interaction can help users explore data, create reports, and support decisions. This showed me that AI tools can make data discovery faster without requiring every user to start by writing SQL queries.
+I learned that median latency alone does not describe the full user experience. High percentiles such as P99.9 help teams see the users who are affected most and set more realistic operational targets.
 
-#### CloudFront and the edge-to-origin model
+#### DynamoDB, GameDays, and operational culture
 
-I strengthened my understanding of CloudFront, caching, content compression, HTTPS, and origin protection. CloudFront is not only a way to deliver content faster; it also contributes to application security, reliability, and scalability.
+The stories about DynamoDB and GameDays showed that reliable systems must be tested under unusual conditions. Preparation, incident exercises, and learning after failures are important parts of engineering culture.
 
-#### Lessons from a hackathon product
+#### The Renaissance Developer mindset
 
-A presentation about building a product in a limited amount of time highlighted the importance of defining an MVP, controlling scope, and communicating clearly within a team. A stable product with a realistic scope can be more valuable than a feature-rich product that is not ready to demonstrate.
+The Renaissance Developer idea presents an engineer as someone who considers users, products, operations, and the impact of technical decisions—not only code. This perspective is especially relevant as AI changes how software is built.
 
-#### LLM variability and multi-agent systems
+#### Connection to my internship work
 
-I learned that setting the temperature to zero does not guarantee identical results from an LLM. I also learned that dividing a complex problem among specialized agents can make a system easier to control, test, and extend.
+The lessons about P99.9, resilience, and user-oriented engineering can be applied when designing APIs, deploying the frontend, and monitoring AWS services during my internship project.
 
 ### Key takeaways
 
-- Provide enough context when working with AI tools.
-- Consider caching, security, and origin management when designing a CloudFront solution.
-- Define the MVP and protect the project scope when time is limited.
-- Add validation and handling for probabilistic LLM output.
-- Use specialized agents when a problem contains several distinct responsibilities.
+- Evaluate reliability with metrics that reflect the users who have the worst experience.
+- Design distributed systems together with scalability, observability, and recovery.
+- Use incident exercises to prepare for unexpected conditions.
+- Understand the product, users, and operations instead of focusing only on source code.
 
 ### Personal reflection
 
-I appreciated the combination of technical presentations and practical examples. Hearing community members describe their learning paths, product decisions, and problem-solving experiences helped me connect the AWS concepts in my worklog with real situations.
+I appreciated the combination of practical experience and lessons that can be applied directly to system building. The event encouraged me to study cloud architecture more deeply and develop an engineering mindset that covers the full product lifecycle.

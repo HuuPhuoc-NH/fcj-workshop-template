@@ -12,6 +12,12 @@ pre: " <b> 4.1. </b> "
 
 Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành cho cộng đồng AWS, tập trung vào quy mô hệ thống, tư duy phát triển sản phẩm và vai trò của kỹ sư trong thời đại AI.
 
+### Mục tiêu sự kiện
+
+- Hiểu thêm cách Amazon tiếp cận việc xây dựng và vận hành hệ thống ở quy mô rất lớn.
+- Kết nối các khái niệm về độ tin cậy, hiệu năng và trải nghiệm người dùng với công việc phát triển phần mềm thực tế.
+- Học hỏi tư duy của một nhà lãnh đạo công nghệ và mở rộng góc nhìn nghề nghiệp trong lĩnh vực Cloud.
+
 ### Thông tin sự kiện
 
 | Thông tin | Chi tiết |
@@ -24,34 +30,33 @@ Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành
 
 ### Nội dung chính
 
-#### Context trong quá trình sử dụng AI
+#### Bài học từ các hệ thống phân tán quy mô lớn
 
-Phần chia sẻ đầu tiên giúp em nhận ra rằng chất lượng câu trả lời của AI phụ thuộc nhiều vào thông tin đầu vào. Một yêu cầu có mục tiêu, bối cảnh, ví dụ và giới hạn rõ ràng sẽ giúp AI đưa ra kết quả hữu ích hơn so với một câu hỏi quá ngắn hoặc chung chung.
+Buổi trò chuyện giúp em hình dung rõ hơn những thách thức khi một hệ thống phải phục vụ lượng người dùng rất lớn. Việc thiết kế không chỉ tập trung vào tính năng mà còn phải tính đến khả năng mở rộng, độ trễ và khả năng phục hồi khi có sự cố.
 
-#### Amazon QuickSight và việc khai thác dữ liệu
+#### Độ tin cậy và chỉ số P99.9
 
-Sự kiện giới thiệu cách sử dụng ngôn ngữ tự nhiên để khám phá dữ liệu, tạo báo cáo và hỗ trợ việc ra quyết định. Điều này cho thấy các công cụ AI có thể giúp người dùng tiếp cận dữ liệu nhanh hơn mà không phải lúc nào cũng bắt đầu bằng việc viết câu lệnh SQL.
+Em nhận ra rằng chỉ nhìn vào độ trễ trung vị là chưa đủ để đánh giá trải nghiệm. Các phân vị cao như P99.9 giúp đội ngũ nhìn thấy nhóm người dùng chịu ảnh hưởng nhiều nhất và đặt ra tiêu chuẩn vận hành sát với thực tế hơn.
 
-#### CloudFront và nền tảng Edge-to-Origin
+#### DynamoDB, GameDays và văn hóa vận hành
 
-Em được củng cố thêm kiến thức về CloudFront, caching, nén nội dung, HTTPS và bảo vệ origin. CloudFront không chỉ giúp phân phối nội dung nhanh hơn mà còn hỗ trợ tăng tính an toàn và khả năng mở rộng cho ứng dụng.
+Những câu chuyện về sự phát triển của DynamoDB và hoạt động GameDays cho thấy hệ thống ổn định cần được kiểm tra trong các tình huống bất thường. Việc chuẩn bị trước, diễn tập và rút kinh nghiệm sau sự cố là một phần của văn hóa kỹ thuật.
 
-#### Bài học từ sản phẩm hackathon
+#### Tư duy Renaissance Developer
 
-Phần chia sẻ về một sản phẩm được xây dựng trong thời gian ngắn nhấn mạnh tầm quan trọng của việc xác định MVP, kiểm soát phạm vi và giao tiếp trong nhóm. Một sản phẩm ổn định với phạm vi phù hợp có giá trị hơn một sản phẩm có quá nhiều tính năng nhưng chưa hoàn thiện.
+Khái niệm Renaissance Developer gợi cho em hình ảnh một kỹ sư không chỉ viết code mà còn quan tâm đến người dùng, sản phẩm, vận hành và tác động của quyết định kỹ thuật. Đây là góc nhìn phù hợp khi AI đang thay đổi cách xây dựng phần mềm.
 
-#### Tính không hoàn toàn cố định của LLM và hệ thống multi-agent
+#### Kết nối với quá trình thực tập
 
-Em hiểu thêm rằng đặt temperature bằng 0 không đồng nghĩa với việc mô hình luôn trả về cùng một kết quả. Bên cạnh đó, việc chia một bài toán lớn thành nhiều agent chuyên trách có thể giúp hệ thống dễ kiểm soát, kiểm thử và mở rộng hơn.
+Các bài học về P99.9, khả năng phục hồi và tư duy hướng người dùng có thể áp dụng khi thiết kế API, triển khai frontend và theo dõi hệ thống AWS trong dự án thực tập.
 
 ### Những điều học được
 
-- Cần cung cấp context đầy đủ khi làm việc với công cụ AI.
-- CloudFront cần được nhìn nhận cùng với caching, bảo mật và quản lý origin.
-- MVP và quản lý phạm vi là yếu tố quan trọng trong các dự án có thời gian ngắn.
-- LLM có tính xác suất, vì vậy hệ thống thực tế cần có kiểm tra và xử lý kết quả.
-- Kiến trúc multi-agent phù hợp với các bài toán có nhiều nhóm nhiệm vụ khác nhau.
+- Độ tin cậy cần được đánh giá bằng các chỉ số phản ánh nhóm người dùng có trải nghiệm kém nhất.
+- Hệ thống phân tán phải được thiết kế cùng với khả năng mở rộng, quan sát và phục hồi.
+- Diễn tập sự cố giúp đội ngũ chuẩn bị tốt hơn cho các tình huống ngoài dự kiến.
+- Kỹ sư nên hiểu cả sản phẩm, người dùng và vận hành thay vì chỉ tập trung vào mã nguồn.
 
 ### Trải nghiệm cá nhân
 
-Em đánh giá cao cách sự kiện kết hợp giữa phần trình bày kỹ thuật và các ví dụ thực tế. Việc được nghe những người trong cộng đồng chia sẻ hành trình học tập, xây dựng sản phẩm và xử lý vấn đề giúp em dễ liên hệ hơn với các kiến thức AWS đang học trong worklog.
+Em đánh giá cao cách sự kiện kết hợp giữa kinh nghiệm thực tế và những bài học có thể áp dụng ngay vào quá trình xây dựng hệ thống. Phần chia sẻ giúp em có thêm động lực học sâu hơn về kiến trúc Cloud và rèn luyện tư duy của một kỹ sư chịu trách nhiệm cho toàn bộ vòng đời sản phẩm.
