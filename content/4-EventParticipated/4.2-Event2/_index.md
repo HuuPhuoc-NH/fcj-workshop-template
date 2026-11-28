@@ -26,7 +26,7 @@ Event 2 focused on bringing AI into products, cloud operations, and enterprise d
 | Date | 09:00–12:00, October 24, 2026 |
 | Location | AWS Vietnam Office, 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City |
 | Role | Attendee |
-| Topics | AI Agents, Voice AI, DevOps, Amazon Bedrock, and MCP |
+| Topics | AI Agents, Voice AI, AWS Resource Access Manager, security testing, and Kiro Crew |
 
 ### In-depth technical sessions
 
@@ -50,6 +50,22 @@ I also learned about using AI Agents to support security testing in SIT/UAT envi
 
 The Kiro Crew demonstration showed how an AI assistant can help with code review, standards checking, and technical context. I also noted that context, token usage, and access permissions must be managed carefully.
 
+#### Context windows and AI Agent memory
+
+An AI Agent needs to distinguish what belongs in its current context, what should be remembered, and what should be discarded. Context-window and memory management directly affect accuracy, token cost, and the agent's ability to maintain a useful conversation.
+
+#### Governance in multi-account environments
+
+The resource-sharing examples showed me that a multi-account architecture needs clear rules. Separating environments, applying IAM policies, and enforcing organization-level controls reduce the risk of a service accessing resources outside its intended scope.
+
+#### Moving security earlier in the workflow
+
+Security testing during SIT/UAT can reveal issues before the product reaches users. This shift-left approach treats security as part of development rather than as a final inspection step.
+
+#### Connection to the First Cloud AI Journey path
+
+The meetup connected several parts of my Cloud and AI learning: understanding AWS services, designing access boundaries, and evaluating AI Agents in real systems. These lessons will help me ask better questions when collaborating on the project.
+
 ### Key values and lessons learned
 
 - AI Agents should be deployed with appropriate permission limits, validation, and approval mechanisms.
@@ -65,26 +81,26 @@ This event helped me view AI from a system-building perspective rather than only
 ### Event photo highlights and attendance proof
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-01.jpg" alt="Attendance at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-01.jpg" alt="Attendance at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 1: Atmosphere at the First Cloud AI Journey Meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-02.jpg" alt="Sessions at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-02.jpg" alt="Sessions at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 2: Sessions and activities during the event.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-03.jpg" alt="Attendees at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-03.jpg" alt="Attendees at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 3: Participants connecting during the meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-04.jpg" alt="Community activity at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-04.jpg" alt="Community activity at the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 4: Community networking activity.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-05.jpg" alt="Attendance proof for the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-05.jpg" alt="Attendance proof for the October 24, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 5: Attendance proof for the First Cloud AI Journey Meetup.</figcaption>
 </figure>

@@ -26,7 +26,7 @@ Fireside Chat with Dr. Werner Vogels was a technical conversation for the AWS co
 | Date | 09:00–10:30, October 2, 2026 |
 | Location | 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City |
 | Role | Attendee |
-| Topics | AI, Cloud, CloudFront, Amazon QuickSight, LLMs, and multi-agent systems |
+| Topics | Distributed systems, DynamoDB, GameDays, P99.9, Cloud Economics, and the Renaissance Developer mindset |
 
 ### Key topics discussed
 
@@ -46,6 +46,18 @@ The stories about DynamoDB and GameDays showed that reliable systems must be tes
 
 The Renaissance Developer idea presents an engineer as someone who considers users, products, operations, and the impact of technical decisions—not only code. This perspective is especially relevant as AI changes how software is built.
 
+#### Building from the user's perspective
+
+A good system is not evaluated only by whether it runs. The team must also consider whether users can complete their work smoothly, whether data is protected, and whether the service maintains its quality during periods of high demand.
+
+#### Cloud Economics and technical decisions
+
+The discussion also helped me see the relationship between architecture and cost. Choices about storage, databases, scaling, and redundancy should be evaluated by the value they create for the product rather than by simply selecting the largest configuration.
+
+#### Lessons I can apply to the project
+
+When working on a project, I should measure instead of relying only on assumptions, document system limits, and prepare recovery procedures. These practices make AWS deployment more manageable as the system grows.
+
 #### Connection to my internship work
 
 The lessons about P99.9, resilience, and user-oriented engineering can be applied when designing APIs, deploying the frontend, and monitoring AWS services during my internship project.
@@ -64,11 +76,11 @@ I appreciated the combination of practical experience and lessons that can be ap
 ### Event photo highlights and attendance proof
 
 <figure style="text-align: center;">
-<img src="../../images/events/event1-01.jpg" alt="Attendance at the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event1-01.jpg" alt="Attendance at the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 1: Attendance at the Fireside Chat with Dr. Werner Vogels.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event1-02.jpg" alt="Attendance proof for the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event1-02.jpg" alt="Attendance proof for the October 2, 2026 event" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Figure 2: Attendance proof at the AWS office.</figcaption>
 </figure>

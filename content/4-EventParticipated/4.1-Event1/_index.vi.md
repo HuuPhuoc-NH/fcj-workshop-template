@@ -26,7 +26,7 @@ Fireside Chat with Dr. Werner Vogels là buổi trò chuyện chuyên sâu dành
 | Thời gian | 09:00–10:30, ngày 02/10/2026 |
 | Địa điểm | Tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
-| Chủ đề | AI, Cloud, CloudFront, Amazon QuickSight, LLM và multi-agent |
+| Chủ đề | Hệ thống phân tán, DynamoDB, GameDays, P99.9, Cloud Economics và Renaissance Developer |
 
 ### Nội dung nổi bật
 
@@ -46,6 +46,18 @@ Những câu chuyện về sự phát triển của DynamoDB và hoạt động 
 
 Khái niệm Renaissance Developer gợi cho em hình ảnh một kỹ sư không chỉ viết code mà còn quan tâm đến người dùng, sản phẩm, vận hành và tác động của quyết định kỹ thuật. Đây là góc nhìn phù hợp khi AI đang thay đổi cách xây dựng phần mềm.
 
+#### Xây dựng sản phẩm từ góc nhìn người dùng
+
+Một hệ thống tốt không chỉ được đánh giá bằng việc nó có chạy hay không. Đội ngũ còn phải quan tâm người dùng có thể hoàn thành công việc thuận lợi, dữ liệu có được bảo vệ và dịch vụ có duy trì được chất lượng trong những thời điểm tải cao hay không.
+
+#### Cloud Economics và các quyết định kỹ thuật
+
+Phần trao đổi cũng giúp em nhìn rõ hơn mối liên hệ giữa kiến trúc và chi phí. Mỗi lựa chọn về lưu trữ, cơ sở dữ liệu, khả năng mở rộng hoặc mức độ dự phòng đều cần được cân nhắc dựa trên giá trị mang lại cho sản phẩm, thay vì chỉ chọn cấu hình lớn nhất.
+
+#### Bài học có thể áp dụng vào dự án
+
+Khi làm dự án, em cần đo lường thay vì chỉ phỏng đoán, ghi nhận các giới hạn của hệ thống và chuẩn bị phương án khôi phục. Đây là cơ sở để việc triển khai AWS có thể kiểm soát được khi hệ thống phát triển.
+
 #### Kết nối với quá trình thực tập
 
 Các bài học về P99.9, khả năng phục hồi và tư duy hướng người dùng có thể áp dụng khi thiết kế API, triển khai frontend và theo dõi hệ thống AWS trong dự án thực tập.
@@ -64,11 +76,11 @@ Em đánh giá cao cách sự kiện kết hợp giữa kinh nghiệm thực t�
 ### Hình ảnh thực tế và minh chứng tham gia sự kiện
 
 <figure style="text-align: center;">
-<img src="../../images/events/event1-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event1-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 1: Hình ảnh tham gia Fireside Chat with Dr. Werner Vogels.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event1-02.jpg" alt="Minh chứng tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event1-02.jpg" alt="Minh chứng tham gia sự kiện ngày 02/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 2: Minh chứng tham gia sự kiện tại văn phòng AWS.</figcaption>
 </figure>

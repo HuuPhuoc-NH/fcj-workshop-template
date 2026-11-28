@@ -26,7 +26,7 @@ Event 2 tập trung vào cách AI đang được đưa vào sản phẩm, vận 
 | Thời gian | 09:00–12:00, ngày 24/10/2026 |
 | Địa điểm | Văn phòng AWS Việt Nam, tầng 26, Tòa nhà Bitexco Financial Tower, số 02 Hải Triều, phường Bến Nghé, Quận 1, TP. Hồ Chí Minh |
 | Vai trò | Người tham dự |
-| Chủ đề | AI Agents, Voice AI, DevOps, Amazon Bedrock và MCP |
+| Chủ đề | AI Agents, Voice AI, AWS Resource Access Manager, Security Testing và Kiro Crew |
 
 ### Nội dung chi tiết các phiên chia sẻ
 
@@ -50,6 +50,22 @@ Em biết thêm về hướng dùng AI Agent để hỗ trợ kiểm thử bảo
 
 Phần demo Kiro Crew cho thấy một trợ lý AI có thể hỗ trợ review code, kiểm tra tiêu chuẩn và theo dõi thông tin kỹ thuật. Em chú ý rằng trợ lý dạng này cần quản lý context, token và quyền truy cập cẩn thận để hoạt động an toàn.
 
+#### Context window và memory của AI Agent
+
+Một AI Agent cần biết thông tin nào đang có trong context, thông tin nào nên lưu lại và thông tin nào phải loại bỏ. Việc quản lý context window và memory ảnh hưởng trực tiếp đến độ chính xác, chi phí token và khả năng duy trì hội thoại của Agent.
+
+#### Quản trị môi trường nhiều tài khoản
+
+Các ví dụ về chia sẻ tài nguyên giúp em hiểu rằng kiến trúc nhiều tài khoản cần có quy tắc rõ ràng. Việc phân tách môi trường, áp dụng IAM policy và kiểm soát quyền ở cấp tổ chức giúp giảm nguy cơ một dịch vụ truy cập nhầm vào tài nguyên không thuộc phạm vi của nó.
+
+#### Đưa bảo mật vào sớm trong quy trình
+
+Kiểm thử bảo mật ở giai đoạn SIT/UAT giúp phát hiện lỗi trước khi sản phẩm đến tay người dùng. Đây là cách tiếp cận shift-left, trong đó bảo mật được xem là một phần của quy trình phát triển chứ không phải bước kiểm tra cuối cùng.
+
+#### Liên hệ với lộ trình First Cloud AI Journey
+
+Các chủ đề trong meetup bổ sung cho quá trình học Cloud và AI của em: từ việc hiểu dịch vụ AWS, thiết kế quyền truy cập, đến việc đánh giá AI Agent trong một hệ thống thực tế. Em có thể dùng những kiến thức này để đặt câu hỏi tốt hơn khi làm việc nhóm.
+
 ### Những giá trị và bài học rút ra
 
 - AI Agent cần được triển khai cùng giới hạn quyền, kiểm tra và cơ chế phê duyệt phù hợp.
@@ -65,26 +81,26 @@ Event giúp em nhìn AI dưới góc độ xây dựng hệ thống thay vì ch�
 ### Hình ảnh thực tế và minh chứng tham gia sự kiện
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-01.jpg" alt="Hình ảnh tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 1: Không khí của buổi First Cloud AI Journey Meetup.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-02.jpg" alt="Nội dung chia sẻ tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-02.jpg" alt="Nội dung chia sẻ tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 2: Nội dung chia sẻ và hoạt động tại sự kiện.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-03.jpg" alt="Người tham dự tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-03.jpg" alt="Người tham dự tại sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 3: Người tham dự giao lưu trong chương trình.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-04.jpg" alt="Hoạt động của sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-04.jpg" alt="Hoạt động của sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 4: Hoạt động kết nối cộng đồng tại sự kiện.</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-<img src="../../images/events/event2-05.jpg" alt="Minh chứng tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
+<img src="/fcj-workshop-template/images/events/event2-05.jpg" alt="Minh chứng tham gia sự kiện ngày 24/10/2026" style="width: 80%; max-width: 900px; height: auto;">
 <figcaption>Hình 5: Minh chứng tham gia First Cloud AI Journey Meetup.</figcaption>
 </figure>
